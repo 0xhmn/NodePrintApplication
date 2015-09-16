@@ -16,31 +16,36 @@ program
     .option('-f, --format <file format>', 'Used by `export`');
 
 program
-    .command('test')
+    .command('test [name]')
     .description('just another test command')
-    .action(function() {
-        lib.test.validate();
+    .action(function (name) {
+        lib.test(name);
     });
 
+// might be removed
+// make some sample json object
 program
     .command('init')
     .description('getting or making the json file')
-    .action(function() {
+    .action(function () {
         lib.init();
     });
 
-//program
-//    .command('export [fileUrl]')
-//    .description('export a .html, .md or .pdf file. Choose the format with --format <file format>')
-//    .action(function() {
-//        lib.exportResume
-//    });
+// var url = 'http://www.w3schools.com/website/customers_mysql.php';
+
+program
+    .command('getjson [jsonUrl]')
+    .description('fetch json file from a url')
+    .action(function (jsonUrl) {
+        lib.getJson(jsonUrl);
+    });
+
 
 // parsing commandline arguments
 program
     .parse(process.argv);
 
-if(!program.args.length){
+if (!program.args.length) {
     console.log("you can choose one of these arguments:");
     program.help();
 }
