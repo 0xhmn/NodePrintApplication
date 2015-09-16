@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Send Json</title>
+</head>
+<body>
+	<p>click on button to send the json post request</p>
+	
+	<input type="button" value="send json file">
+	
+	<script>
+		(function(angular) {
+			angular.module('app', [])
+			.controller('ctrl', ['$scope', '$http', function($scope, $http) {
+				$scope.user = [
+					{'name': 'John',
+					'familyName' : 'Doe',
+					'Age' : 24}
+				];
+				
+			}])
+		})();
+	</script>
+</body>
+</html>
