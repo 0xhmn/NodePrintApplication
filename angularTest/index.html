@@ -1,17 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
+
 <head>
 	<script data-require="angular.js@1.4.3" data-semver="1.4.3" src="https://code.angularjs.org/1.4.3/angular.js"></script>
 	<meta charset="UTF-8">
 	<title>Send Json</title>
 </head>
-<body>
-	<p>click on button to send the json post request</p>
-	
-	<input type="button" value="send json file">
+
+<body ng-controller="appCtrl">
+
+	<div>
+		<p>sending GET request</p>
+		<input type="button" ng-click="sendGet()" value="send GET request">
+	</div>
+
+	<div>
+		<p>sending POST request</p>
+		<input type="button" ng-click="sendPost()" value="send POST request">
+	</div>
+	<div>
+		<p>sending POST request using x-wwww-form-urlencoded</p>
+		<input type="button" ng-click="sendWWWPost()" value="send POST request">
+	</div>
+	<div>
+		<p>Posting form-data</p>
+		<form id="myform" action="http://localhost:3000/login" method="post">
+			<input type="text" name="I_appear_in_req_body" id="mytext" />
+			<input type="submit" id="mysubmit" />
+		</form>
+	</div>
 	
 	<script>
-		angular.module()
+		angular.module('app', [])
+		.controller('appCtrl', function($scope, $http) {
+			
+			// GET req
+			$scope.sendGet = function() {
+				$http.get('http://localhost:3000/').
+				then(function(res){
+					console.log(res);
+				}, function(err){
+					console.log('something went wrong');
+					console.log(err);
+				})
+			}
+			
+			// POST json
+			$scope.sendPost = function() {
+				var req = {
+					method: 'POST',
+					url: 'http://localhost:3000/login',
+					headers: {'Content-Type' : 'application/json'},
+					data : {'msg': 'json from angular'}
+				}
+				$http(req).then(function(res){
+					console.log(res);
+				}, function(err){
+					console.log('json post error');
+				})
+			}
+			
+			// POST x-www
+			$scope.sendWWWPost = function() {
+				$http({
+					method: 'POST',
+					url: 'http://localhost:3000/login',
+					headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+					transformRequest: function(obj) {
+					var str = [];
+					for(var p in obj)
+					str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+					return str.join("&");
+					},
+					data: {msg: 'from angular www post'}
+				}).success(function() {console.log('post sent')})
+			}
+			
+		})
 	</script>
 </body>
+
 </html>
