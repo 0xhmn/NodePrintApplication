@@ -4,11 +4,13 @@
   "description": "A .NET implementation of jsonResume",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./server/bin/www"
   },
   "author": "Hooman Yar",
   "license": "ISC",
   "dependencies": {
-    "commander": "^2.8.1"
+    "commander": "^2.8.1",
+    "body-parser": "~1.13.2",
+    "express": "~4.13.1"
   }
 }

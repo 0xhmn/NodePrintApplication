@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<script data-require="angular.js@1.4.3" data-semver="1.4.3" src="https://code.angularjs.org/1.4.3/angular.js"></script>
 	<meta charset="UTF-8">
 	<title>Send Json</title>
 </head>
@@ -10,17 +11,7 @@
 	<input type="button" value="send json file">
 	
 	<script>
-		(function(angular) {
-			angular.module('app', [])
-			.controller('ctrl', ['$scope', '$http', function($scope, $http) {
-				$scope.user = [
-					{'name': 'John',
-					'familyName' : 'Doe',
-					'Age' : 24}
-				];
-				
-			}])
-		})();
+		angular.module()
 	</script>
 </body>
 </html>
