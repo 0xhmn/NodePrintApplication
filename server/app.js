@@ -16,17 +16,4 @@ app.use(bodyParser.urlencoded({ extended: true }));		// to parse non-json reques
 app.use('/', routes);
 
 
-/**
- * jsut for test - remove this later
- */
-app.post('/login', function (req, res, next) {
-	res.send('got the post');
-	console.log(req.body);
-	next();
-})
-
-app.get('/login', function (req, res, next) {
-	res.send('login page index')
-})
-
 module.exports = app;

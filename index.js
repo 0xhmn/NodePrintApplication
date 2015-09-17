@@ -1,5 +1,7 @@
 /**
- * Created by yar00001 on 9/15/2015.
+ * This is the terminal implementation of this app
+ * it's not necessary since we are using express as the server
+ * JUST FOR TESTING PURPOSES
  */
 
 var pkg = require('./package.json');

@@ -8,14 +8,17 @@
 </head>
 
 <body ng-controller="appCtrl">
-
+	<P>
+		You'll get 415 error for not-json requests.
+	</P>
+	<hr>
 	<div>
 		<p>sending GET request</p>
 		<input type="button" ng-click="sendGet()" value="send GET request">
 	</div>
 
 	<div>
-		<p>sending POST request</p>
+		<p>sending JSON POST request</p>
 		<input type="button" ng-click="sendPost()" value="send POST request">
 	</div>
 	<div>
@@ -24,7 +27,7 @@
 	</div>
 	<div>
 		<p>Posting form-data</p>
-		<form id="myform" action="http://localhost:3000/login" method="post">
+		<form id="myform" action="http://localhost:3000/" method="post">
 			<input type="text" name="I_appear_in_req_body" id="mytext" />
 			<input type="submit" id="mysubmit" />
 		</form>
@@ -49,7 +52,7 @@
 			$scope.sendPost = function() {
 				var req = {
 					method: 'POST',
-					url: 'http://localhost:3000/login',
+					url: 'http://localhost:3000/',
 					headers: {'Content-Type' : 'application/json'},
 					data : {'msg': 'json from angular'}
 				}
@@ -64,7 +67,7 @@
 			$scope.sendWWWPost = function() {
 				$http({
 					method: 'POST',
-					url: 'http://localhost:3000/login',
+					url: 'http://localhost:3000/',
 					headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 					transformRequest: function(obj) {
 					var str = [];
