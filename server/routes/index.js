@@ -3,12 +3,13 @@ var router = express.Router();
 var lib = require('./../../lib')
 
 /* GET / */
-router.get('/', function(req, res) {
+router.get('/', function(req, res, next) {
 	res.send('express home page');
+	next();
 })
 
 /* POST / */
-router.post('/', function(req, res) {
+router.post('/', function(req, res, next) {
 	// only accepts 'application/json'
 	if (req.headers['content-type'] != 'application/json'){
 		console.log('you need to send application/json');
@@ -20,7 +21,8 @@ router.post('/', function(req, res) {
 	 */
 	// lib.makeJsonFile(req.body);
 	console.log(req.body);
+	next();
 })
-
+ 
 
 module.exports = router;

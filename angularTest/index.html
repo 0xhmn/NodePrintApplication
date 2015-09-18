@@ -9,7 +9,7 @@
 
 <body ng-controller="appCtrl">
 	<P>
-		You'll get 415 error for not-json requests.
+		You'll get {{415}} error for not-json requests.
 	</P>
 	<hr>
 	<div>
@@ -62,7 +62,7 @@
 					console.log('json post error');
 				})
 			}
-			
+
 			// POST x-www
 			$scope.sendWWWPost = function() {
 				$http({
