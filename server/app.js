@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-
+var path = require('path');
 var routes = require('./routes/index');
 
 /**
@@ -14,6 +14,6 @@ app.use(bodyParser.urlencoded({ extended: true }));		// to parse non-json reques
  * defining routes
  */
 app.use('/', routes);
-
+app.use(express.static(path.join(__dirname, 'tmp')));
 
 module.exports = app;
