@@ -19,7 +19,12 @@
 
 	<div>
 		<p>sending JSON POST request</p>
-		<input type="button" ng-click="sendPost()" value="send POST request">
+		<input type="button" ng-click="sendPost()" value="send json POST request">
+	</div>
+	<div>
+		<p>sending JSON file</p>
+		<a href="../templates/resume.json">json file</a>
+		<input type="button" ng-click="sendJsonFile()" value="send POST request">
 	</div>
 	<div>
 		<p>sending POST request using x-wwww-form-urlencoded</p>
@@ -46,22 +51,40 @@
 					console.log('something went wrong');
 					console.log(err);
 				})
-			}
+			};
 			
 			// POST json
 			$scope.sendPost = function() {
 				var req = {
 					method: 'POST',
-					url: 'http://localhost:3000/',
+					url: 'http://localhost:3000/test',
 					headers: {'Content-Type' : 'application/json'},
-					data : {'msg': 'json from angular'}
-				}
+					data : {'name': 'John', 'status' : 'test status page'}
+				};
 				$http(req).then(function(res){
 					console.log(res);
 				}, function(err){
 					console.log('json post error');
 				})
-			}
+			};
+
+			// POST json file
+			$scope.sendJsonFile = function() {
+				$http.get('../templates/jsonApplication.json').success (function (data) {
+					console.log(data);
+					var req = {
+						method: 'POST',
+						url: 'http://localhost:3000/',
+						headers: {'Content-Type' : 'application/json'},
+						data : data
+					};
+					$http(req).then(function(res){
+						console.log(res);
+					} , function(err) {
+						console.log('jsonFile post error');
+					})
+				});
+			};
 
 			// POST x-www
 			$scope.sendWWWPost = function() {
