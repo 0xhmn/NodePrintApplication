@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var lib = require('./../../lib');
-var fs = require('fs');
-var path = require('path');
 
 
 /* GET / */
@@ -10,6 +8,8 @@ router.get('/', function(req, res) {
 	res.send('<h1>express home page</h1>');
 
 });
+
+
 
 /* POST / */
 router.post('/', function(req, res) {
@@ -22,11 +22,10 @@ router.post('/', function(req, res) {
 	// console.log(req.body);
 	res.send('got the post');
 
-	// parsing json to template
-	// using the jsonFile in templates folder for test
-	// var file = path.join(process.cwd(), 'templates/jsonApplication.json');
-	lib.appBuilder.buildHtml(req.body, "default");
 
+	lib.appBuilder.buildHtml(req.body, "default");
+    // TODO: make sure the html file is there before calling this
+    lib.appBuilder.buildPDF();
 });
 
 router.post('/test', function(req, res) {

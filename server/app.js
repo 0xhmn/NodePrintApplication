@@ -3,6 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 var routes = require('./routes/index');
+var download = require('./routes/download');
 
 /**
  * using bodyParser
@@ -21,7 +22,10 @@ app.use(function(req, res, next) {
 /**
  * defining routes
  */
+app.use('/download', download);
 app.use('/', routes);
+
 app.use(express.static(path.join(__dirname, 'tmp')));
+
 
 module.exports = app;

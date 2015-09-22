@@ -37,7 +37,22 @@
 			<input type="submit" id="mysubmit" />
 		</form>
 	</div>
-	
+
+    <hr/>
+
+	<div>
+		<form action="http://localhost:3000/download/html">
+			<p>download the html output</p>
+			<input type="submit" ng-click="sendJsonFile()" value="get the html output"/>
+		</form>
+		<form action="http://localhost:3000/download/pdf">
+			<p>download the pdf output</p>
+			<input type="submit" value="get the pdf output" ng-click="sendJsonFile()"/>
+		</form>
+	</div>
+    <hr/>
+
+
 	<script>
 		angular.module('app', [])
 		.controller('appCtrl', function($scope, $http) {

@@ -9,10 +9,11 @@
   "author": "Hooman Yar",
   "license": "ISC",
   "dependencies": {
-    "commander": "^2.8.1",
     "body-parser": "~1.13.2",
+    "commander": "^2.8.1",
     "express": "~4.13.1",
     "handlebars": "^2.0.0-alpha.4",
+    "html-pdf": "^1.4.0",
     "node-static": "~0.7.7"
   }
 }
