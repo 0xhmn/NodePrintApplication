@@ -19,8 +19,12 @@ router.post('/', function(req, res) {
 	}
 	
 	// console.log(req.body);
-    lib.appBuilder.buildHtml(req.body, "default");
-	res.send('got the post');
+    lib.appBuilder.buildHtml(req.body, "default", function(err) {
+        if (!err) {
+            res.send('got the post');
+        }
+    });
+
 
 
 
@@ -37,8 +41,11 @@ router.post('/test', function(req, res) {
 		res.sendStatus(415);
 	}
 
-    lib.appBuilder.buildHtml(req.body, "test");
-    res.send('got the test post');
+    lib.appBuilder.buildHtml(req.body, "test", function(err) {
+        if (!err) {
+            res.send('got the post');
+        }
+    });
 
 });
 
