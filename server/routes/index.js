@@ -5,8 +5,7 @@ var lib = require('./../../lib');
 
 /* GET / */
 router.get('/', function(req, res) {
-	res.send('<h1>express home page</h1>');
-
+	res.send('<h1>Express Home Page</h1><p>send your post req to this url</p>');
 });
 
 
@@ -20,14 +19,17 @@ router.post('/', function(req, res) {
 	}
 	
 	// console.log(req.body);
+    lib.appBuilder.buildHtml(req.body, "default");
 	res.send('got the post');
 
 
-	lib.appBuilder.buildHtml(req.body, "default");
-    // TODO: make sure the html file is there before calling this
-    lib.appBuilder.buildPDF();
+
+
 });
 
+/**
+ * making test-template
+ */
 router.post('/test', function(req, res) {
 	// only accepts 'application/json'
 	if (req.headers['content-type'] != 'application/json'){
@@ -35,8 +37,8 @@ router.post('/test', function(req, res) {
 		res.sendStatus(415);
 	}
 
-	res.send('got the test post');
-	lib.appBuilder.buildHtml(req.body, "test");
+    lib.appBuilder.buildHtml(req.body, "test");
+    res.send('got the test post');
 
 });
 

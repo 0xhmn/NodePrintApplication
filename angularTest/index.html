@@ -8,10 +8,20 @@
 </head>
 
 <body ng-controller="appCtrl">
-	<P>
+	<h3>
 		You'll get {{415}} error for not-json requests.
-	</P>
+	</h3>
 	<hr>
+    <div>
+        <p>sending JSON file to default template</p>
+        <input type="button" ng-click="sendJsonFile()" value="send POST request">
+    </div>
+    <hr/>
+    <div>
+        <p>sending JSON file to test template</p>
+        <input type="button" ng-click="sendJsonFileTest()" value="send POST request">
+    </div>
+    <hr/>
 	<div>
 		<p>sending GET request</p>
 		<input type="button" ng-click="sendGet()" value="send GET request">
@@ -21,11 +31,7 @@
 		<p>sending JSON POST request</p>
 		<input type="button" ng-click="sendPost()" value="send json POST request">
 	</div>
-	<div>
-		<p>sending JSON file</p>
-		<a href="../templates/resume.json">json file</a>
-		<input type="button" ng-click="sendJsonFile()" value="send POST request">
-	</div>
+
 	<div>
 		<p>sending POST request using x-wwww-form-urlencoded</p>
 		<input type="button" ng-click="sendWWWPost()" value="send POST request">
@@ -50,6 +56,7 @@
 			<input type="submit" value="get the pdf output" ng-click="sendJsonFile()"/>
 		</form>
 	</div>
+
     <hr/>
 
 
@@ -86,7 +93,7 @@
 			// POST json file
 			$scope.sendJsonFile = function() {
 				$http.get('../templates/jsonApplication.json').success (function (data) {
-					console.log(data);
+					// console.log(data);
 					var req = {
 						method: 'POST',
 						url: 'http://localhost:3000/',
@@ -100,6 +107,20 @@
 					})
 				});
 			};
+
+            $scope.sendJsonFileTest = function() {
+                var req = {
+                    method: 'POST',
+                    url: 'http://localhost:3000/test',
+                    headers: {'Content-Type' : 'application/json'},
+                    data : {name: 'John', status: "testing object"}
+                };
+                $http(req).then(function(res){
+                    console.log(res);
+                } , function(err) {
+                    console.log('jsonFile post error');
+                })
+            };
 
 			// POST x-www
 			$scope.sendWWWPost = function() {
