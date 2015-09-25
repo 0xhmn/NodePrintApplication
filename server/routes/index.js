@@ -6,6 +6,7 @@ var lib = require('./../../lib');
 /* GET / */
 router.get('/', function(req, res) {
 	res.send('<h1>Express Home Page</h1><p>send your post req to this url</p>');
+    // delete the file
 });
 
 
@@ -19,16 +20,9 @@ router.post('/', function(req, res) {
 	}
 	
 	// console.log(req.body);
-    lib.appBuilder.buildHtml(req.body, "default", function(err) {
-        if (!err) {
-            res.send('got the post');
-        }
-    });
+    lib.appBuilder.buildHtml(req.body, "default");
 
-
-
-
-
+    res.send('done');
 });
 
 /**
@@ -41,12 +35,9 @@ router.post('/test', function(req, res) {
 		res.sendStatus(415);
 	}
 
-    lib.appBuilder.buildHtml(req.body, "test", function(err) {
-        if (!err) {
-            res.send('got the post');
-        }
-    });
+    lib.appBuilder.buildHtml(req.body, "test");
 
+    res.send('done');
 });
 
 module.exports = router;
