@@ -7,7 +7,7 @@ $ git cloen [git-repo-url]
 $ npm install
 ```
 
-### Running the Server
+### Hosting on Native Node Server
 This app eventually will be used in IIS but for testing purposes you can run it:
 use
 ```sh
@@ -15,8 +15,20 @@ $ npm start
 ```
 or
 ```sh
-$ node ./server/bin/www
+$ node server/app.js
 ```
-### Sending JSON requests
-Use `Curl` or a sample html page located in `./angularTest/index.html` to send JSON POST requests.
-If your request is successful, you will find your `html` output in `./server/tmp/tmp.html`. Other output formats will be added.
+##### Note: if you run this app through node server you need to change path to 'css' and 'handlbar' template in `lib/render/index.js`.
+
+### Hosign on IISNode
+##### Installing for IIS 7.x/8.x
+Follow [these steps](https://github.com/tjanczuk/iisnode#hosting-nodejs-applications-in-iis-on-windows)
+Then create a new appliation. The default App name used in this applicaiton is `nodeprint`.
+##### POST/GET requests
+you can send get/post to these urls:
+|                  	| GET                  		    			| POST              						|
+ ----------------- 	| ---------------------------------------- 	| ------------------------------------------
+| Homepage			| `http://localhost/nodeprint/server/`  	| - 										|
+| Json Data    		| -											| `http://localhost/nodeprint/server/`  	|
+| Test Data    		| -											| `http://localhost/nodeprint/server/test/` |
+
+Generated 'HTML' will be sent as a part of `Response` to `Post` Requests.
