@@ -2,9 +2,10 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
-var routes = require('./routes/index');
-var download = require('./routes/download');
 var http = require('http');
+//routing modules
+var async = require('async');
+var lib = require('./../lib');
 
 /**
  * using bodyParser
@@ -22,10 +23,77 @@ app.use(function(req, res, next) {
 
 /**
  * defining routes
+ * ToDo: find a way to make 'route' compatible with iisnode by adding routes to web.config watch list
  */
-app.use('/download', download);
-app.use('/', routes);
+/* GET / */
+app.get('/nodeprint/server', function(req, res) {
+    res.send('<h1>Express Home Page</h1><p>send your post req to the url</p>');
+});
+app.get('/nodeprint/server/test', function(req, res) {
+    // testing the builder
+    res.send(lib.appBuilder.appTestBuilder());
 
+});
+
+/* POST / */
+app.post('/nodeprint/server/', function(req, res) {
+    // only accepts 'application/json'
+    if (req.headers['content-type'] != 'application/json'){
+        console.log('you need to send application/json');
+        res.sendStatus(415);
+    }
+
+    async.waterfall([
+        function makeHtml(makeHtmlCallback) {
+            lib.appBuilder.appBuilder(function(err, html) {
+                if (err) console.log(err);
+                makeHtmlCallback(null, html);
+            }, req.body, "default");
+        },
+        function sendRes(html, sendCallback) {
+            res.send({msg: "done", html: html});
+            sendCallback();
+        }
+    ], function(err) {
+        if (err) {
+            consoel.log(err);
+            res.sendStatus(500);
+        }
+    });
+});
+
+/**
+ * making test-template for POST req
+ */
+app.post('/nodeprint/server/test', function(req, res) {
+    // only accepts 'application/json'
+    if (req.headers['content-type'] != 'application/json'){
+        console.log('you need to send application/json');
+        res.sendStatus(415);
+    }
+
+    async.waterfall([
+        function makeHtml(makeHtmlCallback) {
+            lib.appBuilder.appBuilder(function(err, html) {
+                if (err) console.log(err);
+                makeHtmlCallback(null, html);
+            }, req.body, "test");
+        },
+        function sendRes(html, sendCallback) {
+            res.send({msg: "done", html: html});
+            sendCallback();
+        }
+    ], function(err) {
+        if (err) {
+            consoel.log(err);
+            res.sendStatus(500);
+        }
+    });
+});
+
+/**
+ * manage static files
+ */
 app.use(express.static(path.join(__dirname, 'tmp')));
 
 /**

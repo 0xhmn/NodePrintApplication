@@ -1,0 +1,87 @@
+<html>
+<head>
+    <title>iisnode logs</title>
+    <style type="text/css">
+        body
+        {
+            font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+        }
+        table
+        {
+            border-collapse: collapse;
+        }
+        td, th
+        {
+            border: 1px solid lightgray;
+            padding: 3px 7px 2px 7px;
+        }
+        th
+        {
+            text-align: left;
+            padding-top: 5px;
+            padding-bottom: 4px;
+            background-color: Gray;
+            color: #ffffff;
+        }
+        td.stderr
+        {
+            color: Red;
+        }
+    </style>
+</head>
+<body>
+    <table id="logFilesTable">
+        <tr>
+            <th>
+                Computer name
+            </th>
+            <th>
+                PID
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Created
+            </th>
+            <th>
+                Link
+            </th>
+        </tr>
+    </table>
+    <p id="lastUpdated"></p>
+    <script type="text/javascript">
+
+        // this is replaced with actual data at runtime by code in interceptor.js
+        var logFiles = [{"file":"CSOM-ULTRAVIOLE-10004-stdout-1443549222954.txt","computername":"CSOM-ULTRAVIOLE","pid":10004,"type":"stdout","created":1443549222954},{"file":"CSOM-ULTRAVIOLE-10160-stderr-1443550023670.txt","computername":"CSOM-ULTRAVIOLE","pid":10160,"type":"stderr","created":1443550023670},{"file":"CSOM-ULTRAVIOLE-10160-stdout-1443550023666.txt","computername":"CSOM-ULTRAVIOLE","pid":10160,"type":"stdout","created":1443550023666},{"file":"CSOM-ULTRAVIOLE-10184-stderr-1443548671671.txt","computername":"CSOM-ULTRAVIOLE","pid":10184,"type":"stderr","created":1443548671671},{"file":"CSOM-ULTRAVIOLE-10184-stdout-1443548671667.txt","computername":"CSOM-ULTRAVIOLE","pid":10184,"type":"stdout","created":1443548671667},{"file":"CSOM-ULTRAVIOLE-376-stderr-1443549727931.txt","computername":"CSOM-ULTRAVIOLE","pid":376,"type":"stderr","created":1443549727931},{"file":"CSOM-ULTRAVIOLE-376-stdout-1443549727928.txt","computername":"CSOM-ULTRAVIOLE","pid":376,"type":"stdout","created":1443549727928},{"file":"CSOM-ULTRAVIOLE-6636-stderr-1443548906270.txt","computername":"CSOM-ULTRAVIOLE","pid":6636,"type":"stderr","created":1443548906270},{"file":"CSOM-ULTRAVIOLE-6636-stdout-1443548906267.txt","computername":"CSOM-ULTRAVIOLE","pid":6636,"type":"stdout","created":1443548906267},{"file":"CSOM-ULTRAVIOLE-7716-stdout-1443548710238.txt","computername":"CSOM-ULTRAVIOLE","pid":7716,"type":"stdout","created":1443548710238},{"file":"CSOM-ULTRAVIOLE-7876-stdout-1443548999758.txt","computername":"CSOM-ULTRAVIOLE","pid":7876,"type":"stdout","created":1443548999758},{"file":"CSOM-ULTRAVIOLE-8092-stdout-1443548815834.txt","computername":"CSOM-ULTRAVIOLE","pid":8092,"type":"stdout","created":1443548815834},{"file":"CSOM-ULTRAVIOLE-8576-stderr-1443548602873.txt","computername":"CSOM-ULTRAVIOLE","pid":8576,"type":"stderr","created":1443548602873},{"file":"CSOM-ULTRAVIOLE-8576-stdout-1443548602870.txt","computername":"CSOM-ULTRAVIOLE","pid":8576,"type":"stdout","created":1443548602870},{"file":"CSOM-ULTRAVIOLE-8780-stdout-1443548692289.txt","computername":"CSOM-ULTRAVIOLE","pid":8780,"type":"stdout","created":1443548692289},{"file":"CSOM-ULTRAVIOLE-8960-stdout-1443548950407.txt","computername":"CSOM-ULTRAVIOLE","pid":8960,"type":"stdout","created":1443548950407},{"file":"CSOM-ULTRAVIOLE-9048-stderr-1443547249408.txt","computername":"CSOM-ULTRAVIOLE","pid":9048,"type":"stderr","created":1443547249408},{"file":"CSOM-ULTRAVIOLE-9048-stdout-1443547249407.txt","computername":"CSOM-ULTRAVIOLE","pid":9048,"type":"stdout","created":1443547249407},{"file":"CSOM-ULTRAVIOLE-9484-stderr-1443550063206.txt","computername":"CSOM-ULTRAVIOLE","pid":9484,"type":"stderr","created":1443550063206},{"file":"CSOM-ULTRAVIOLE-9520-stdout-1443548835441.txt","computername":"CSOM-ULTRAVIOLE","pid":9520,"type":"stdout","created":1443548835441},{"file":"CSOM-ULTRAVIOLE-9904-stdout-1443548793785.txt","computername":"CSOM-ULTRAVIOLE","pid":9904,"type":"stdout","created":1443548793785}];
+        var lastUpdated = 1443550063624;
+        var date = new Date();
+
+        date.setTime(lastUpdated);
+        document.getElementById('lastUpdated').innerHTML = 'Index was last updated ' + date;
+
+        logFiles.sort(function (a, b) {
+            return b.created - a.created;
+        });
+
+        var logFilesTable = document.getElementById("logFilesTable");
+        for (var i = 0; i < logFiles.length; i++) {
+            var logFile = logFiles[i];
+            date.setTime(logFile.created);
+            var row = logFilesTable.insertRow(-1);
+            var computerNameCell = row.insertCell(0);
+            var pidCell = row.insertCell(1);
+            var typeCell = row.insertCell(2);
+            var dateCell = row.insertCell(3);
+            var logCell = row.insertCell(4);
+            computerNameCell.innerHTML = logFile.computername;
+            pidCell.innerHTML = logFile.pid.toString();
+            typeCell.innerHTML = logFile.type;
+            typeCell.setAttribute('class', logFile.type);
+            dateCell.innerHTML = date.toString();
+            logCell.innerHTML = '<a href="' + logFile.file + '">log</a>';
+        };
+
+    </script>
+</body>
+</html>

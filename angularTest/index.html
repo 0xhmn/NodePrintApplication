@@ -3,59 +3,60 @@
 
 <head>
 	<script data-require="angular.js@1.4.3" data-semver="1.4.3" src="https://code.angularjs.org/1.4.3/angular.js"></script>
-	<meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <meta charset="UTF-8">
 	<title>Send Json</title>
 </head>
 
-<body ng-controller="appCtrl">
-	<h3>
-		You'll get {{415}} error for not-json requests.
-	</h3>
-	<hr>
-    <div>
-        <p>sending JSON file to default template</p>
-        <input type="button" ng-click="sendJsonFile()" value="send POST request">
+<body ng-controller="appCtrl" class="container">
+
+
+    <div class="row">
+        <h3>
+            You'll get {{415}} error for not-json requests.
+        </h3>
+        <hr/>
+        <div>
+            <p>sending JSON file to <b>default</b> template</p>
+            <input type="button" ng-click="sendJsonFile()" value="send POST request">
+        </div>
+        <hr/>
+        <div>
+            <p>sending JSON file to <b>test</b> template</p>
+            <input type="button" ng-click="sendJsonFileTest()" value="send POST request">
+        </div>
     </div>
-    <hr/>
-    <div>
-        <p>sending JSON file to test template</p>
-        <input type="button" ng-click="sendJsonFileTest()" value="send POST request">
+
+    <br/>
+
+    <div class="row">
+        <h3>Other types of Request</h3>
+        <hr/>
+        <div>
+            <p>sending GET request</p>
+            <input type="button" ng-click="sendGet()" value="send GET request">
+        </div>
+        <hr/>
+        <div>
+            <p>sending JSON POST request</p>
+            <input type="button" ng-click="sendPost()" value="send json POST request">
+        </div>
+        <hr/>
+        <div>
+            <p>sending POST request using x-wwww-form-urlencoded</p>
+            <input type="button" ng-click="sendWWWPost()" value="send POST request">
+        </div>
+        <hr/>
+        <div>
+            <p>Posting form-data</p>
+            <form id="myform" action="http://localhost:3000/" method="post">
+                <input type="text" name="I_appear_in_req_body" id="mytext" />
+                <input type="submit" id="mysubmit" />
+            </form>
+        </div>
     </div>
-    <hr/>
-	<div>
-		<p>sending GET request</p>
-		<input type="button" ng-click="sendGet()" value="send GET request">
-	</div>
 
-	<div>
-		<p>sending JSON POST request</p>
-		<input type="button" ng-click="sendPost()" value="send json POST request">
-	</div>
 
-	<div>
-		<p>sending POST request using x-wwww-form-urlencoded</p>
-		<input type="button" ng-click="sendWWWPost()" value="send POST request">
-	</div>
-	<div>
-		<p>Posting form-data</p>
-		<form id="myform" action="http://localhost:3000/" method="post">
-			<input type="text" name="I_appear_in_req_body" id="mytext" />
-			<input type="submit" id="mysubmit" />
-		</form>
-	</div>
-
-    <hr/>
-
-	<div>
-		<form action="http://localhost:3000/download/html">
-			<p>download the html output</p>
-			<input type="submit" ng-click="sendJsonFile()" value="get the html output"/>
-		</form>
-		<form action="http://localhost:3000/download/pdf">
-			<p>download the pdf output</p>
-			<input type="submit" value="get the pdf output" ng-click="sendJsonFile()"/>
-		</form>
-	</div>
 
     <hr/>
 
@@ -96,7 +97,7 @@
 					// console.log(data);
 					var req = {
 						method: 'POST',
-						url: 'http://localhost:3000/',
+						url: 'http://localhost/nodeprint/server/',
 						headers: {'Content-Type' : 'application/json'},
 						data : data
 					};
@@ -115,7 +116,7 @@
             $scope.sendJsonFileTest = function() {
                 var req = {
                     method: 'POST',
-                    url: 'http://localhost:3000/test',
+                    url: 'http://localhost/nodeprint/server/test',
                     headers: {'Content-Type' : 'application/json'},
                     data : {name: 'John', status: "testing object"}
                 };

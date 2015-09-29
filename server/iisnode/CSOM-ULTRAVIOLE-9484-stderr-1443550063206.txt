@@ -1,0 +1,66 @@
+Error: invalid json
+    at parse (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\lib\types\json.js:83:15)
+    at E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\lib\read.js:108:18
+    at invokeCallback (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:251:16)
+    at done (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:240:7)
+    at IncomingMessage.onEnd (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:297:7)
+    at emitNone (events.js:67:13)
+    at IncomingMessage.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:893:12)
+    at doNTCallback2 (node.js:429:9)
+    at process._tickCallback (node.js:343:17)
+Error: invalid json
+    at parse (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\lib\types\json.js:83:15)
+    at E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\lib\read.js:108:18
+    at invokeCallback (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:251:16)
+    at done (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:240:7)
+    at IncomingMessage.onEnd (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:297:7)
+    at emitNone (events.js:67:13)
+    at IncomingMessage.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:893:12)
+    at doNTCallback2 (node.js:429:9)
+    at process._tickCallback (node.js:343:17)
+Error: invalid json
+    at parse (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\lib\types\json.js:83:15)
+    at E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\lib\read.js:108:18
+    at invokeCallback (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:251:16)
+    at done (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:240:7)
+    at IncomingMessage.onEnd (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:297:7)
+    at emitNone (events.js:67:13)
+    at IncomingMessage.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:893:12)
+    at doNTCallback2 (node.js:429:9)
+    at process._tickCallback (node.js:343:17)
+SyntaxError: Unexpected token n
+    at Object.parse (native)
+    at parse (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\lib\types\json.js:88:17)
+    at E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\lib\read.js:108:18
+    at invokeCallback (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:251:16)
+    at done (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:240:7)
+    at IncomingMessage.onEnd (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:297:7)
+    at emitNone (events.js:67:13)
+    at IncomingMessage.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:893:12)
+    at doNTCallback2 (node.js:429:9)
+SyntaxError: Unexpected token '
+    at Object.parse (native)
+    at parse (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\lib\types\json.js:88:17)
+    at E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\lib\read.js:108:18
+    at invokeCallback (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:251:16)
+    at done (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:240:7)
+    at IncomingMessage.onEnd (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:297:7)
+    at emitNone (events.js:67:13)
+    at IncomingMessage.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:893:12)
+    at doNTCallback2 (node.js:429:9)
+SyntaxError: Unexpected token '
+    at Object.parse (native)
+    at parse (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\lib\types\json.js:88:17)
+    at E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\lib\read.js:108:18
+    at invokeCallback (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:251:16)
+    at done (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:240:7)
+    at IncomingMessage.onEnd (E:\GitHub\yar00001\NodePrintApplication\node_modules\body-parser\node_modules\raw-body\index.js:297:7)
+    at emitNone (events.js:67:13)
+    at IncomingMessage.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:893:12)
+    at doNTCallback2 (node.js:429:9)
