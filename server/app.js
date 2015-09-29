@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var routes = require('./routes/index');
 var download = require('./routes/download');
+var http = require('http');
 
 /**
  * using bodyParser
@@ -27,5 +28,18 @@ app.use('/', routes);
 
 app.use(express.static(path.join(__dirname, 'tmp')));
 
+/**
+ * PORT
+ * default or 3000
+ */
+var port = process.env.PORT || '3000';
+app.set('port', port);
 
-module.exports = app;
+/**
+ * making http server
+ */
+var server = http.createServer(app);
+server.listen(port);
+
+
+// module.exports = app;

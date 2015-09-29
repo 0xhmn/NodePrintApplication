@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var lib = require('./../../lib');
+var async = require('async');
 
 
 /* GET / */
 router.get('/', function(req, res) {
-	res.send('<h1>Express Home Page</h1><p>send your post req to this url</p>');
+	res.send('<h1>Express Home Page</h1><p>send your post req to this urldssd</p>');
     // delete the file
 });
 
@@ -18,11 +19,24 @@ router.post('/', function(req, res) {
 		console.log('you need to send application/json');
 		res.sendStatus(415);
 	}
-	
-	// console.log(req.body);
-    lib.appBuilder.buildHtml(req.body, "default");
 
-    res.send('done');
+    async.waterfall([
+        function makeHtml(makeHtmlCallback) {
+            lib.appBuilder.appBuilder(function(err, html) {
+                if (err) console.log(err);
+                makeHtmlCallback(null, html);
+            }, req.body, "default");
+        },
+        function sendRes(html, sendCallback) {
+            res.send({msg: "done", html: html});
+            sendCallback();
+        }
+    ], function(err) {
+        if (err) {
+            consoel.log(err);
+            res.sendStatus(500);
+        }
+    });
 });
 
 /**
@@ -35,9 +49,24 @@ router.post('/test', function(req, res) {
 		res.sendStatus(415);
 	}
 
-    lib.appBuilder.buildHtml(req.body, "test");
+    async.waterfall([
+        function makeHtml(makeHtmlCallback) {
+            lib.appBuilder.appBuilder(function(err, html) {
+                if (err) console.log(err);
+                makeHtmlCallback(null, html);
+            }, req.body, "test");
+        },
+        function sendRes(html, sendCallback) {
+            res.send({msg: "done", html: html});
+            sendCallback();
+        }
+    ], function(err) {
+        if (err) {
+            consoel.log(err);
+            res.sendStatus(500);
+        }
+    });
 
-    res.send('done');
 });
 
 module.exports = router;

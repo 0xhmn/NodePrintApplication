@@ -102,6 +102,10 @@
 					};
 					$http(req).then(function(res){
 						console.log(res);
+                        if (res.status === 200) {
+                            console.log('got the response back');
+                            console.log(res.data.html);
+                        }
 					} , function(err) {
 						console.log('jsonFile post error');
 					})
@@ -119,6 +123,7 @@
                     console.log(res);
                     if (res.status === 200) {
                         console.log('got the response back');
+                        console.log(res.data.html);
                     }
                 } , function(err) {
                     console.log('jsonFile post error');
