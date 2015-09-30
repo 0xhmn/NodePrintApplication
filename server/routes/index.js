@@ -3,7 +3,11 @@ var router = express.Router();
 var lib = require('./../../lib');
 var async = require('async');
 
-
+/**
+ * IS NOT IMPLEMENTED:
+ * EVERYTHING IS MOVED TO APP.JS
+ * TODO: MAKE IT WORK WITH IISNODE
+ */
 /* GET / */
 router.get('/', function(req, res) {
 	res.send('<h1>Express Home Page</h1><p>send your post req to this urldssd</p>');

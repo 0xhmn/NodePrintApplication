@@ -17,7 +17,7 @@ or
 ```sh
 $ node server/app.js
 ```
-####Note: 
+#####Note: 
 if you run this app through node server you need to change path to 'css' and 'handlbar' template in `lib/render/index.js`.
 
 ### Hosign on IISNode
@@ -25,16 +25,17 @@ if you run this app through node server you need to change path to 'css' and 'ha
 Follow [these steps](https://github.com/tjanczuk/iisnode#hosting-nodejs-applications-in-iis-on-windows)
 Then create a new appliation. The default App name used in this applicaiton is `nodeprint`.
 ##### Sending Requests
-you can send get/post to these urls:
-Sending Get to Homepage:
+It is possible to send get/post to these urls:
+
+- Sending Get to Homepage:
 ```
 http://localhost/nodeprint/server/
 ```
-Sending Json data via POST:
+- Sending Json data via POST:
 ```
 http://localhost/nodeprint/server/
 ```
-Sending test Json data via POST:
+- Sending test Json data via POST:
 ```
 http://localhost/nodeprint/server/test/
 ```

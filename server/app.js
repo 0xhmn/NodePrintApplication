@@ -27,7 +27,7 @@ app.use(function(req, res, next) {
  */
 /* GET / */
 app.get('/nodeprint/server', function(req, res) {
-    res.send('<h1>Express Home Page</h1><p>send your post req to the url</p>');
+    res.send('<h1>Express Home Page</h1><p>Send your post req to the url</p><P>More Information <a href="https://github.umn.edu/hooman/NodePrintApplication">Here</a></P>');
 });
 app.get('/nodeprint/server/test', function(req, res) {
     // testing the builder
