@@ -1,0 +1,412 @@
+{
+  "about": {
+    "lastName": "Fierke",
+    "firstName": "Max",
+    "middleName": null,
+    "previousName": null,
+    "suffix": null,
+    "preferredName": "RED"
+  },
+  "confidential": {
+    "hispanic": false,
+    "raceEthnicity": [
+      "White"
+    ],
+    "gender": "M",
+    "military": false,
+    "giBill": true,
+    "vested": 0.001,
+    "internationalStudent": false,
+    "umnId": "4298689",
+    "ssn": "XXX-XX-6789",
+    "birthday": "2/9/1994",
+    "firstGeneration": true,
+    "highestLevel1": "Graduate or professional degree",
+    "highestLevel2": "Bachelor's degree or equivalent"
+  },
+  "academic": {
+    "secondary": {
+      "id": 8212828,
+      "schoolId": 231100,
+      "startDate": "9/2/2008",
+      "endDate": "5/30/2012",
+      "schoolName": "Highland Park Senior High School",
+      "location": "St Paul MN 55116 USA",
+      "diplomaName": "High School Diploma, IB Diploma",
+      "diplomaAwardedDate": "6/4/2012"
+    },
+    "universities": [
+      {
+        "id": 8291867,
+        "schoolId": 301123,
+        "startDate": "8/28/2012",
+        "endDate": "12/17/2016",
+        "schoolName": "University of Minnesota-Twin Cities",
+        "location": "Minneapolis MN  USA",
+        "degreeName": "Bachelor's of Individualized Studies",
+        "degreeAwardedDate": "12/17/2016",
+        "majorCategoryId": 7,
+        "majorName": "Computer Science, Technical Writing & Communications, and IT Infrastructure",
+        "isGpaScaleStandard": true,
+        "gpa": 3.07,
+        "gpaEquiv": null,
+        "gpaScaleDesc": null,
+        "transcript": {
+          "id": 8291867,
+          "name": null,
+          "received": false,
+          "dateReceived": null,
+          "message": null,
+          "uploadedFileUuid": "3d9dee22-6d03-4c7d-855e-4b63b88bfc41",
+          "uploadedFileName": "CSoM_BrandGuide_Final Jul2014.pdf",
+          "acadHistoryId": 8291867,
+          "dateVerified": "9/24/2015",
+          "dateOfficialRec": "9/24/2015"
+        }
+      },
+      {
+        "id": 8364948,
+        "schoolId": null,
+        "startDate": "7/27/2015",
+        "endDate": null,
+        "schoolName": "New Age Feelgoodery Academy",
+        "location": "",
+        "degreeName": null,
+        "degreeAwardedDate": null,
+        "majorCategoryId": null,
+        "majorName": null,
+        "isGpaScaleStandard": false,
+        "gpa": null,
+        "gpaEquiv": "Smiley Face",
+        "gpaScaleDesc": "Smiley Face, Neutral Face, Frowny Face",
+        "transcript": {
+          "id": 8364948,
+          "name": null,
+          "received": false,
+          "dateReceived": null,
+          "message": null,
+          "uploadedFileUuid": "10623632-b6a1-48f0-ba33-8cd4c8a79b7d",
+          "uploadedFileName": "PTMBA_2011_ApplicationInstructions.pdf",
+          "acadHistoryId": 8364948,
+          "dateVerified": null,
+          "dateOfficialRec": null
+        }
+      }
+    ],
+    "coursework": "SOMETHING"
+  },
+  "tests": {
+    "metadata": {
+      "gmatId": 8290272,
+      "greId": null,
+      "toeflId": 8291930,
+      "ieltsId": 8291941,
+      "pteId": null,
+      "eltRequirement": "required",
+      "eltOptions": {
+        "pte": "pte",
+        "ielts": "ielts",
+        "toefl": "toefl"
+      },
+      "eltWaiver": {
+        "uploadedFileUuid": "c0c0d36e-00f3-4f31-9f7e-fbd1907a6bd9",
+        "uploadedFileName": "MSBAcoursedescriptionsv3.pdf"
+      },
+      "eltType": "toefl",
+      "toeflType": "ibt"
+    },
+    "gmat": {
+      "gmatId": 8290272,
+      "gmatScoreId": "999999",
+      "scoreDate": "1/1/2001",
+      "verbalScore": 28,
+      "verbalPercentile": 6.0,
+      "quantScore": 46,
+      "quantPercentile": 6.0,
+      "analyticalWritingScore": 6.0,
+      "analyticalWritingPercentile": 6.0,
+      "reasoningScore": 6,
+      "reasoningPercentile": 12.0,
+      "totalScore": 222,
+      "totalPercentile": 6.0
+    },
+    "gre": null,
+    "toefl": {
+      "toeflId": 8291930,
+      "testDate": "6/5/2015",
+      "section1": 25,
+      "section2": 25.0,
+      "section3": 25,
+      "section4": 1.0,
+      "section5": 100
+    },
+    "ielts": {
+      "ieltsId": 8291941,
+      "testDate": "12/31/2011",
+      "listeningScore": 9.0,
+      "readingScore": 5.0,
+      "writingScore": 5.0,
+      "speakingScore": 5.0,
+      "totalScore": 5.0
+    },
+    "pte": null
+  },
+  "employment": {
+    "recentEmployment": {
+      "employer": {
+        "id": 4702,
+        "name": "Department of Defense"
+      },
+      "id": 8212834.0,
+      "jobTitle": "Senior Analyst",
+      "startDate": "4/5/1999",
+      "endDate": null,
+      "yearsInPosition": 13.0,
+      "salary": 230000.0,
+      "isFullTime": true,
+      "hoursPerWeek": 45,
+      "companyInfo": {
+        "employerDescription": "Covert foreign intelligence gathering, definitely nothing sinister",
+        "industryId": "A916",
+        "jobFunctionId": "B556",
+        "companySizeId": 5,
+        "annualSalesId": 1,
+        "ownershipType": "na"
+      }
+    },
+
+    "militaryInfo": {
+      "isVeteran": false,
+      "usingGIBill": false,
+      "giBillPercentage": null
+    },
+    "professionalReferences": [
+      {
+        "name": "Jeff",
+        "employer": "Jefferson",
+        "jobTitle": "Top Chef",
+        "email": "jeff@hefe.jeffe",
+        "phoneNumber": "555-555-5555",
+        "isDirectSupervisor": true
+      },
+      {
+        "name": "Greg",
+        "employer": "Generic Names, Inc.",
+        "jobTitle": "VP of Names",
+        "email": "greg@generic.inc",
+        "phoneNumber": "123-456-7890",
+        "isDirectSupervisor": false
+      },
+      {
+        "name": "asdsad",
+        "employer": "asdasd",
+        "jobTitle": "sadsad",
+        "email": "asdasd@asdsad.com",
+        "phoneNumber": "555-888-9999",
+        "isDirectSupervisor": false
+      }
+    ],
+    "workExperience": {
+      "fullTimeYears": 5
+    },
+    "resume": {
+      "questionId": 90045,
+      "title": "Resume",
+      "prompt": "Please submit a current resume such as you would submit for a job application. Use the Browse... button to find the file you wish to upload.  This file may be in .rtf, .doc, .pdf, or .txt format.  Once you have selected the file, press the Upload button to save the file with your application materials.",
+      "uploadedFileUuid": "f45d0cf1-d81d-47f5-b9c8-55952936f26b",
+      "uploadedFileName": "ITGeneralist.pdf"
+    }
+  },
+  "additionalInfo": {
+    "additionalInfo": {
+      "contactByStudent": true,
+      "releaseInfo": true
+    },
+    "essays": [
+      {
+        "isRequired": true,
+        "questionId": 5105960,
+        "title": "Personal Statement",
+        "question": "We want to admit a diverse, intellectually curious, and interesting group of students who will contribute to and benefit from the Carlson MBA Program. This section of the application helps the admissions committee get to know you better as an individual, and allows the committee to evaluate the extent to which your skills, interests, values, and career goals are well suited for the program.  Please write a personal statement <b>using no more than 750 words (2 pages)</b>, that addresses the following questions: <br/><ul><li>Briefly describe your short-term and long-term career goals. Why are you choosing to pursue an MBA at this time in your career, and what are you hoping to accomplish by doing so?</li><li>Why are you interested in pursuing an MBA at the Carlson School of Management?</li><li>What do you feel makes you a strong candidate for the program? How will you contribute to the MBA Program overall?</li></ul>",
+        "answerId": 8291913,
+        "uploadedFileUuid": "b0e30bc8-8fd1-4351-a449-276bb383aee9",
+        "uploadedFileName": "Bi-Weekly Timesheet FY13-FY14.pdf"
+      }
+    ],
+    "concentrations": {
+      "selected": [
+        8291880,
+        2612010
+      ],
+      "available": [
+        {
+          "id": 2612008,
+          "name": "Finance",
+          "isSelected": false
+        },
+        {
+          "id": 8291881,
+          "name": "Health Care",
+          "isSelected": false
+        },
+        {
+          "id": 2612010,
+          "name": "Information Systems & Technology (MIS)",
+          "isSelected": false
+        },
+        {
+          "id": 8291880,
+          "name": "Management",
+          "isSelected": false
+        },
+        {
+          "id": 2612009,
+          "name": "Marketing",
+          "isSelected": false
+        },
+        {
+          "id": 2612011,
+          "name": "Supply Chain & Operations",
+          "isSelected": false
+        },
+        {
+          "id": 21,
+          "name": "Undecided",
+          "isSelected": false
+        }
+      ]
+    },
+    "enterprises": {
+      "selected": [
+        8291879,
+        8291877
+      ],
+      "available": [
+        {
+          "id": 8291878,
+          "name": "Brand Enterprise",
+          "isSelected": false
+        },
+        {
+          "id": 8291879,
+          "name": "Consulting Enterprise",
+          "isSelected": true
+        },
+        {
+          "id": 8291876,
+          "name": "Funds Enterprise",
+          "isSelected": true
+        },
+        {
+          "id": 8291877,
+          "name": "Ventures Enterprise",
+          "isSelected": true
+        }
+      ]
+    },
+    "advertisements": {
+      "selected": [
+        2613619,
+        2613620,
+        2613628,
+        5089250,
+        5156408
+      ],
+      "available": [
+        {
+          "id": 2613620,
+          "name": "Admissions staff",
+          "isSelected": false
+        },
+        {
+          "id": 5156395,
+          "name": "Airport Advertisement",
+          "isSelected": false
+        },
+        {
+          "id": 2613619,
+          "name": "Alumni",
+          "isSelected": false
+        },
+        {
+          "id": 5156408,
+          "name": "Billboard",
+          "isSelected": false
+        },
+        {
+          "id": 5156360,
+          "name": "Business Contact/Colleague/Friend",
+          "isSelected": false
+        },
+        {
+          "id": 4467346,
+          "name": "Carlson School website",
+          "isSelected": false
+        },
+        {
+          "id": 5156409,
+          "name": "Corporate Visit",
+          "isSelected": false
+        },
+        {
+          "id": 2613628,
+          "name": "Current Student",
+          "isSelected": false
+        },
+        {
+          "id": 5156431,
+          "name": "Ed Fair",
+          "isSelected": false
+        },
+        {
+          "id": 5931617,
+          "name": "Facebook/Twitter/LinkedIn",
+          "isSelected": false
+        },
+        {
+          "id": 2613629,
+          "name": "Faculty",
+          "isSelected": false
+        },
+        {
+          "id": 5089250,
+          "name": "GMASS",
+          "isSelected": false
+        },
+        {
+          "id": 5485402,
+          "name": "Magazine Advertizement",
+          "isSelected": false
+        },
+        {
+          "id": 5156448,
+          "name": "Minnesota Public Radio (MPR)",
+          "isSelected": false
+        },
+        {
+          "id": 2613649,
+          "name": "Other",
+          "isSelected": false
+        },
+        {
+          "id": 5156362,
+          "name": "StarTribune online",
+          "isSelected": false
+        }
+      ]
+    }
+  },
+  "residency": {
+    "internationalStudent": true,
+    "birthCountry": "USA",
+    "permResCountry": "USA",
+    "citizenCountry": "USA",
+    "stateLegalRes": "MN",
+    "mnResidency": {
+      "yearsInMN": 21,
+      "monthsInMN": 5,
+      "sinceDate": "2/9/1994",
+      "reasonForMove": "Birth"
+    }
+  }
+}

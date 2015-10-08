@@ -48,7 +48,7 @@ app.post('/nodeprint/server/', function(req, res) {
             lib.appBuilder.appBuilder(function(err, html) {
                 if (err) console.log(err);
                 makeHtmlCallback(null, html);
-            }, req.body, "default");
+            }, req.body.json, req.body.temp);
         },
         function sendRes(html, sendCallback) {
             res.send({msg: "done", html: html});

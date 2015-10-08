@@ -25,6 +25,7 @@
             <p>sending JSON file to <b>test</b> template</p>
             <input type="button" ng-click="sendJsonFileTest()" value="send POST request">
         </div>
+
     </div>
 
     <br/>
@@ -64,7 +65,47 @@
 	<script>
 		angular.module('app', [])
 		.controller('appCtrl', function($scope, $http) {
-			
+
+            // POST json file
+            $scope.sendJsonFile = function() {
+                $http.get('../templates/userApplication.json').success (function (data) {
+                    // console.log(data);
+                    var req = {
+                        method: 'POST',
+                        url: 'http://localhost/nodeprint/server/',
+                        headers: {'Content-Type' : 'application/json'},
+                        data : {json: data, temp: "ftmba"}
+                    };
+                    $http(req).then(function(res){
+                        console.log(res);
+                        if (res.status === 200) {
+                            console.log('got the response back');
+                            console.log(res.data.html);
+                        }
+                    } , function(err) {
+                        console.log('jsonFile post error');
+                    })
+                });
+            };
+
+            $scope.sendJsonFileTest = function() {
+                var req = {
+                    method: 'POST',
+                    url: 'http://localhost/nodeprint/server/test',
+                    headers: {'Content-Type' : 'application/json'},
+                    data : {name: 'John', status: "testing object"}
+                };
+                $http(req).then(function(res){
+                    console.log(res);
+                    if (res.status === 200) {
+                        console.log('got the response back');
+                        console.log(res.data.html);
+                    }
+                } , function(err) {
+                    console.log('jsonFile post error');
+                })
+            };
+
 			// GET req
 			$scope.sendGet = function() {
 				$http.get('http://localhost:3000/').
@@ -91,45 +132,7 @@
 				})
 			};
 
-			// POST json file
-			$scope.sendJsonFile = function() {
-				$http.get('../templates/jsonApplication.json').success (function (data) {
-					// console.log(data);
-					var req = {
-						method: 'POST',
-						url: 'http://localhost/nodeprint/server/',
-						headers: {'Content-Type' : 'application/json'},
-						data : data
-					};
-					$http(req).then(function(res){
-						console.log(res);
-                        if (res.status === 200) {
-                            console.log('got the response back');
-                            console.log(res.data.html);
-                        }
-					} , function(err) {
-						console.log('jsonFile post error');
-					})
-				});
-			};
 
-            $scope.sendJsonFileTest = function() {
-                var req = {
-                    method: 'POST',
-                    url: 'http://localhost/nodeprint/server/test',
-                    headers: {'Content-Type' : 'application/json'},
-                    data : {name: 'John', status: "testing object"}
-                };
-                $http(req).then(function(res){
-                    console.log(res);
-                    if (res.status === 200) {
-                        console.log('got the response back');
-                        console.log(res.data.html);
-                    }
-                } , function(err) {
-                    console.log('jsonFile post error');
-                })
-            };
 
 			// POST x-www
 			$scope.sendWWWPost = function() {

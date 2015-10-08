@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>John Doe - Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- styles -->
+    <style>
+        {{{bootstrap}}}
+        {{{css}}}
+    </style>
+
+</head>
+
+<body>
+<section class="container">
+
+    <!-- Header -->
+    <header class="row attention">
+        <div class="col-sm-12">
+            <!--inline h1 & h2-->
+            <h1>Fulltime MBA Application</h1>
+            <h2> - </h2>
+            <h2>Fall 2016</h2>
+        </div>
+    </header>
+
+    <!-- ABOUT -->
+    {{#user.about}}
+        <article class="row">
+            <header class="col-sm-2">
+                <h3>Applicant Name</h3>
+            </header>
+            <div class="col-sm-10 ">
+                <div class="col-sm-12">
+                    <div class="col-sm-4">
+                        <p>&nbsp;{{lastName}}</p>
+                        <p class="title-line">LAST(FAMILY) NAME</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p>&nbsp;{{firstName}}</p>
+                        <p class="title-line">FIRST (GIVEN) NAME</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>&nbsp;{{middleName}}</p>
+                        <p class="title-line">MIDDLE NAME</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p>&nbsp;{{preferredName}}</p>
+                        <p class="title-line">PREFERRED FIRST NAME</p>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="col-sm-4">
+                        <p>&nbsp;{{previousName}}</p>
+                        <p class="title-line">PREVIOUS NAME</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    {{/user.about}}
+
+    <!-- CONFIDENTIAL -->
+    {{#user.confidential}}
+        <article class="row">
+            <header class="col-sm-2">
+                <h3>Confidential Information</h3>
+            </header>
+            <div class="col-sm-10 ">
+                <div class="col-sm-12 ">
+                    <div class="col-sm-5">
+                        <P class="title-inline">Ethnicity: Hispanic or Latino?</P>
+                            {{#if hispanic}}
+                                <p class="answer-inline">Yes</p>
+                            {{else}}
+                                <p class="answer-inline">No</p>
+                            {{/if}}
+                    </div>
+                    <div class="col-sm-5">
+                        <P class="title-inline attention">Gender?</P>
+                        <p class="answer-inline">{{gender}}</p>
+                    </div>
+                </div>
+                <div class="col-sm-12 ">
+                    <div class="col-sm-5">
+                        <P class="title-inline">U.S.millitary veteran?</P>
+                        {{#if military}}
+                            <p class="answer-inline">Yes</p>
+                        {{else}}
+                            <p class="answer-inline">No</p>
+                        {{/if}}
+                    </div>
+                    <div class="col-sm-4">
+                        <P class="title-inline">Post 9/11 GI Bill?</P>
+                        {{#if giBill}}
+                            <p class="answer-inline">Yes</p>
+                        {{else}}
+                            <p class="answer-inline">No</p>
+                        {{/if}}
+                    </div>
+                    <div class="col-sm-3">
+                        {{#if giBill}}
+                            <P class="title-inline">% Vested</P>
+                            <p class="answer-inline">{{vested}}</p>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="col-sm-12 ">
+                    <div class="col-sm-9">
+                        <P class="title-inline">International student (non-resident alien)?</P>
+                        {{#if internationalStudent}}
+                            <p class="answer-inline">Yes</p>
+                        {{else}}
+                            <p class="answer-inline">No</p>
+                        {{/if}}
+                    </div>
+                    <div class="col-sm-3">
+                        <P class="title-inline">Race?</P>
+                        {{#each raceEthnicity}}
+                        <p class="answer-inline">{{this}}</p>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </article>
+    {{/user.confidential}}
+
+    <!-- Enterprise & Specialization Selection(s) -->
+
+    {{#user.additionalInfo}}
+        <article class="row">
+            <header class="col-sm-2">
+                <h3 class="attention">Enterprise & Specialization Selection(s)</h3>
+            </header>
+            <div class="col-sm-10 ">
+                    {{#if enterprises.available.length}}
+                        <div class="col-sm-12 ">
+                            {{#each enterprises.available}}
+                                    {{#if isSelected}}
+                                    <div class="col-sm-6">
+                                        <p>{{name}}</p>
+                                        <p class="title-line">ENTERPRISE SELECTION {{@index}}</p>
+                                    </div>
+                                    {{/if}}
+                            {{/each}}
+                        </div>
+                    {{/if}}
+                <div class="col-sm-12 attention">
+                    <div class="col-sm-6">
+                        <p>SPECIALIZATION</p>
+                        <p class="title-line">SPECIALIZATION #1</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p>SPECIALIZATION</p>
+                        <p class="title-line">SPECIALIZATION #2</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    {{/user.additionalInfo}}
+
+    <!-- Academic Background -->
+    {{#user.academic}}
+        <article class="row">
+            <header class="col-sm-2">
+                <h3>Academic Background</h3>
+            </header>
+            <div class="col-sm-10 ">
+                <h5>Secondary school (high school)</h5>
+                <div class="col-sm-12 ">
+                    <div class="col-sm-7">
+                        <p>{{secondary.schoolName}} - {{secondary.location}}</p>
+                        <p class="title-line">NAME AND LOCATION</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p>{{secondary.startDate}} - {{secondary.endDate}}</p>
+                        <p class="title-line">FROM -- TO</p>
+                    </div>
+                </div>
+                <div class="col-sm-12 ">
+                    <div class="col-sm-7">
+                        <p>{{secondary.diplomaName}} - {{secondary.diplomaAwardedDate}}</p>
+                        <p class="title-line">DIPLOMA OR CERTIFICATE NAME / DATE AWARDED</p>
+                    </div>
+                </div>
+
+                {{#if universities.length}}
+                    {{#each universities}}
+                        <div class="col-sm-12 ">
+                            <h5>College, university, and/or graduate school</h5>
+                        </div>
+                        <div class="col-sm-12 ">
+                            <div class="col-sm-7">
+                                <p>{{schoolName}} - {{location}}</p>
+                                <p class="title-line">NAME AND LOCATION</p>
+                            </div>
+                            <div class="col-sm-5">
+                                <p>{{startDate}} - {{endDate}}</p>
+                                <p class="title-line">FROM -- TO</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 ">
+                            <div class="col-sm-7">
+                                <p>{{degreeName}} - {{degreeAwardedDate}}</p>
+                                <p class="title-line">DEGREE, MAJOR, DATE AWARDED</p>
+                            </div>
+                            <div class="col-sm-5">
+                                <p>&nbsp;{{gpa}}</p>
+                                <p class="title-line">GPA</p>
+                            </div>
+                        </div>
+
+                    {{/each}}
+                {{/if}}
+            </div>
+        </article>
+    {{/user.academic}}
+
+    <!-- TEST RESULTS -->
+    {{#user.tests}}
+        <article class="row">
+            <header class="col-sm-2">
+                <h3>Test Results</h3>
+            </header>
+            <div class="col-sm-10 ">
+                <div class="col-sm-12">
+                    <h5>Academic Testing:</h5>
+                </div>
+
+                <!--GMAT-->
+                {{#if gmat}}
+                    <div class="col-sm-12">
+                        <div class="col-sm-1">
+                            <p class="title">GMAT</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{gmat.scoreDate}}</p>
+                            <p class="title-line">DATE</p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p>&nbsp;{{gmat.verbalScore}}</p>
+                            <p class="title-line">VERBAL</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{gmat.quantScore}}</p>
+                            <p class="title-line">QUANTITATIVE</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{gmat.totalScore}}</p>
+                            <p class="title-line">TOTAL</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{gmat.analyticalWritingScore}}</p>
+                            <p class="title-line">AWA</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{gmat.reasoningScore}}</p>
+                            <p class="title-line">IR</p>
+                        </div>
+                    </div>
+                {{/if}}
+
+                <!--GRE-->
+                <div class="col-sm-12 attention">
+                    <div class="col-sm-1">
+                        <p class="title">GRE</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>01/01/2001</p>
+                        <p class="title-line">DATE</p>
+                    </div>
+                    <div class="col-sm-1">
+                        <p>1010</p>
+                        <p class="title-line">VERBAL</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">QUANTITATIVE</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">TOTAL</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">AWA</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line attention">GMAT Equiv</p>
+                    </div>
+                </div>
+
+                <!--OTHER-->
+                <div class="col-sm-12 attention">
+                    <div class="col-sm-1">
+                        <p class="title">Other</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p>1010</p>
+                        <p class="title-line"></p>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-12">
+                    <h5 class="attention top">English Language Testing (if applicable):</h5>
+                </div>
+
+                <!--IBT/PBT/IELTS/PTE DATE-->
+                <div class="col-sm-12 attention">
+                    <div class="col-sm-3">
+                        <p>01/01/2001</p>
+                        <p class="title-line">IBT TEST DATE</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p>01/01/2001</p>
+                        <p class="title-line">PBT TEST DATE</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p>1010</p>
+                        <p class="title-line">IELTS TEST DATE</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p>1010</p>
+                        <p class="title-line">PTE TEST DATE</p>
+                    </div>
+                </div>
+
+                <!--IBT-->
+                <div class="col-sm-12 top attention">
+                    <div class="col-sm-2">
+                        <p class="title">IBT TOEFL</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>30</p>
+                        <p class="title-line">READING</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">LISTENING</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">SPEAKING</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">WRITING</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">TOTAL SCORE</p>
+                    </div>
+                </div>
+
+                <!--PBT-->
+                <div class="col-sm-12 attention">
+                    <div class="col-sm-2">
+                        <p class="title">PBT TOEFL</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>30</p>
+                        <p class="title-line">LISTENING COMP</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">STRUCTURE/WRTIE EXP</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">READING COMP</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">TWE</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">TOTAL SCORE</p>
+                    </div>
+                </div>
+
+
+                {{#if ielts}}
+                    <!--IELTS-->
+                    <div class="col-sm-12">
+                        <div class="col-sm-2">
+                            <p class="title">IELTS</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{ielts.listeningScore}}</p>
+                            <p class="title-line">LISTENING COMP</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{ielts.readingScore}}</p>
+                            <p class="title-line">READING</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{ielts.writingScore}}</p>
+                            <p class="title-line">WRITING</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{ielts.speakingScore}}</p>
+                            <p class="title-line">SPEAKING</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{ielts.totalScore}}</p>
+                            <p class="title-line">OVERALL BAND SCORE</p>
+                        </div>
+                    </div>
+                {{/if}}
+
+                <!--PTE-->
+                <div class="col-sm-12 attention">
+                    <div class="col-sm-2">
+                        <p class="title">PTE</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">OVERAL SCORE</p>
+                    </div>
+                </div>
+                <div class="col-sm-12 attention">
+                    <div class="col-sm-2">
+                        <p class="small">COMMUNICATIVE SKILLS</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">LISTENING</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">READING</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">SPEAKING</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">WRITING</p>
+                    </div>
+                </div>
+                <div class="col-sm-12 attention">
+                    <div class="col-sm-2">
+                        <p class="small">ENABLING SKILLS</p>
+                    </div>
+                    <div class="col-sm-1">
+                        <p>1010</p>
+                        <p class="title-line">GRAMMER</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">ORAL FLUENCY</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">PRONUNCIATION</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">WRITING DISCOURSE</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>1010</p>
+                        <p class="title-line">SPELLING</p>
+                    </div>
+                    <div class="col-sm-1">
+                        <p>1010</p>
+                        <p class="title-line">VOCABULARY</p>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    {{/user.tests}}
+
+
+    <!-- EMPLOYMENT -->
+    {{#user.employment}}
+        <article class="row">
+            <header class="col-sm-2">
+                <h3>Employment</h3>
+            </header>
+                <div class="col-sm-10 ">
+                    <div class="col-sm-12 ">
+                        <div class="col-sm-2 attention">
+                            <p>X</p>
+                            <p class="title-line">Current Position</p>
+                        </div>
+                        <div class="col-sm-2 attention">
+                            <p>X</p>
+                            <p class="title-line">Last Position</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <p>&nbsp;{{workExperience.fullTimeYears}}</p>
+                            <p class="title-line">Year of Full-Time Experience</p>
+                        </div>
+                    </div>
+                    {{#if recentEmployment}}
+                        <div class="col-sm-12 ">
+                            <div class="col-sm-6">
+                                <p>&nbsp;{{recentEmployment.employer.name}}</p>
+                                <p class="title-line">COMPANY</p>
+                            </div>
+                            <div class="col-sm-3">
+                                <p>&nbsp;{{recentEmployment.startDate}}</p>
+                                <p class="title-line">FROM (MONTH/YEAR)</p>
+                            </div>
+                            <div class="col-sm-3">
+                                <p>&nbsp;{{recentEmployment.endDate}}</p>
+                                <p class="title-line">TO (MONTH/YEAR)</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 ">
+                            <div class="col-sm-6">
+                                <p>&nbsp;{{recentEmployment.jobTitle}}</p>
+                                <p class="title-line">JOB TITLE</p>
+                            </div>
+                            <div class="col-sm-3">
+                                <p>&nbsp;{{recentEmployment.yearsInPosition}}</p>
+                                <p class="title-line">YEARS IN THIS POSITION</p>
+                            </div>
+                            <div class="col-sm-3">
+                                <p>&nbsp;{{recentEmployment.hoursPerWeek}}</p>
+                                <p class="title-line">HOURS PER WEEK</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 ">
+                            <div class="col-sm-6">
+                                <P class="title-inline">Was this position full-time?</P>
+                                {{#if recentEmployment.isFullTime}}
+                                    <p class="answer-inline">Yes</p>
+                                {{else}}
+                                    <p class="answer-inline">No</p>
+                                {{/if}}
+                            </div>
+                            <div class="col-sm-6">
+                                <P class="title-inline">Annual ending salary in U.S. $</P>
+                                <p class="answer-inline">{{recentEmployment.salary}}</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <h5>Company Info:</h5>
+                        </div>
+                        <div class="col-sm-12 ">
+                            <div class="col-sm-6">
+                                <p>&nbsp;{{recentEmployment.companyInfo.industryId}}</p>
+                                <p class="title-line attention">INDUSTRY</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p>&nbsp;{{recentEmployment.companyInfo.jobFunctionId}}</p>
+                                <p class="title-line attention">JOB FUNCTION</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 ">
+                            <div class="col-sm-4">
+                                <p>&nbsp;{{recentEmployment.companyInfo.companySizeId}}</p>
+                                <p class="title-line attention">COMPANY SIZE</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <p>&nbsp;{{recentEmployment.companyInfo.annualSalesId}}</p>
+                                <p class="title-line attention">ANNUAL SALES</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <p>&nbsp;{{recentEmployment.companyInfo.ownershipType}}</p>
+                                <p class="title-line">OWNERSHIP TYPE</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 ">
+                            <div class="col-sm-12">
+                                <p>&nbsp;{{recentEmployment.companyInfo.employerDescription}}</p>
+                                <p class="title-line attention">NATURE OF EMPLOYER'S ACTIVITIES</p>
+                            </div>
+                        </div>
+                    {{/if}}
+            </div>
+        </article>
+    {{/user.employment}}
+
+    <!-- Dual Degree -->
+    <article class="row">
+        <header class="col-sm-2">
+            <h3>Dual Degree</h3>
+        </header>
+        <div class="col-sm-10 attention">
+            <div class="col-sm-12 ">
+                <div class="col-sm-6">
+                    <P class="title-inline">Do you intend to pursue a dual degree?</P>
+                    <p class="answer-inline">Yes</p>
+                </div>
+            </div>
+            <div class="col-sm-12 ">
+                <div class="col-sm-6">
+                    <P class="title-inline">If yes, which program?</P>
+                    <p class="answer-inline">that program</p>
+                </div>
+            </div>
+            <div class="col-sm-12 ">
+                <div class="col-sm-6">
+                    <P class="title-inline">When do you plan to begin the MBA program?</P>
+                    <p class="answer-inline">today</p>
+                </div>
+            </div>
+            <div class="col-sm-12 ">
+                <div class="col-sm-12">
+                    <P class="paragraph">I understand the parameters of the dual degree program for which I am applying, and if admitted I agree to complete
+                        the degree requirements as stated. I understand that I must be fully committed to the MBA coursework and other MBA
+                        program curricular and co-curricular activities during my first year of MBA study, and that I am permitted to register
+                        for only MBA coursework during that first year. I agree that I will not register for any coursework in another degree
+                        program, nor will I participate in any other curricular or co-curricular activities that will interfere with my commitment
+                        to the MBA program, during that time.</P>
+                </div>
+            </div>
+            <div class="col-sm-12 ">
+                <div class="col-sm-6">
+                    <p>Yes</p>
+                    <P class="title-line">I agree to the above statement</P>
+                </div>
+            </div>
+        </div>
+    </article>
+
+
+    <!-- PRESENT ADDRESS -->
+    <article class="row">
+        <header class="col-sm-2">
+            <h3>Present Address</h3>
+        </header>
+        <div class="col-sm-10 attention">
+            <div class="col-sm-12 ">
+                <p>address</p>
+                <p class="title-line">PRESENT STREET ADDRESS</p>
+            </div>
+            <div class="col-sm-12 ">
+                <p>address</p>
+                <p class="title-line">STREET LINE 2</p>
+            </div>
+            <div class="col-sm-12 ">
+                <div class="col-sm-4">
+                    <p>umn</p>
+                    <p class="title-line">CITY</p>
+                </div>
+                <div class="col-sm-2">
+                    <p>FROM</p>
+                    <p class="title-line">STATE</p>
+                </div>
+                <div class="col-sm-2">
+                    <p>TO</p>
+                    <p class="title-line">ZIP</p>
+                </div>
+                <div class="col-sm-4">
+                    <p>TO</p>
+                    <p class="title-line">COUNTRY</p>
+                </div>
+            </div>
+            <div class="col-sm-12 ">
+                <div class="col-sm-6">
+                    <p>umn</p>
+                    <p class="title-line">VALID FROM (DATE)</p>
+                </div>
+                <div class="col-sm-6">
+                    <p>FROM</p>
+                    <p class="title-line">VALID TO (DATE)</p>
+                </div>
+            </div>
+
+        </div>
+    </article>
+
+    <!-- Phone Numbers/ E-mail/ Etc -->
+    <article class="row">
+        <header class="col-sm-2">
+            <h3>Phone Numbers/ E-mail/ Etc.</h3>
+        </header>
+        <div class="col-sm-10 attention">
+            <div class="col-sm-12 ">
+                <div class="col-sm-6">
+                    <P>PREFERED</P>
+                    <p class="title-line">EMAIL</p>
+                </div>
+                <div class="col-sm-6">
+                    <p>SKYPE</p>
+                    <p class="title-line">SKYPE ID</p>
+                </div>
+            </div>
+            <div class="col-sm-12 ">
+                <div class="col-sm-6">
+                    <P>PREFERED</P>
+                    <p class="title-line">PHONE</p>
+                </div>
+                <div class="col-sm-6">
+                    <p>TWITTER</p>
+                    <p class="title-line">TWITTER</p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Residency -->
+    {{#user.residency}}
+        <article class="row">
+            <header class="col-sm-2">
+                <h3>Residency</h3>
+            </header>
+            <div class="col-sm-10 ">
+                <div class="col-sm-12 ">
+                    <div class="col-sm-6">
+                        <P>&nbsp;{{stateLegalRes}}</P>
+                        <p class="title-line">STATE OF LEGAL RESIDENCE</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p>&nbsp;{{permResCountry}}</p>
+                        <p class="title-line">COUNTRY OF PERMANENT RESIDENCE</p>
+                    </div>
+                </div>
+                <div class="col-sm-12 ">
+                    <div class="col-sm-6">
+                        <p>&nbsp;{{birthCountry}}</p>
+                        <p class="title-line">COUNTRY OF BIRTH</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p>&nbsp;{{permResCountry}}</p>
+                        <p class="title-line">COUNTRY OF CITIZENSHIP</p>
+                    </div>
+                </div>
+                {{#if internationalStudent}}
+                    <div class="col-sm-12 ">
+                        <div class="col-sm-3">
+                            <p class="title attention">Visa type</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p>visa type</p>
+                            <p class="title-line"></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <div class="col-sm-3">
+                            <p class="title attention">F-1 School</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p>f-1 school</p>
+                            <p class="title-line"></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 bottom">
+                        <div class="col-sm-3 attention">
+                            <p class="title">Attended that institution?</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p>Yes</p>
+                            <p class="title-line"></p>
+                        </div>
+                    </div>
+                {{/if}}
+            </div>
+        </article>
+    {{/user.residency}}
+
+
+    <!-- Confidential -->
+    {{#user.confidential}}
+        <article class="row">
+            <header class="col-sm-2">
+                <h3>Confidential Information</h3>
+            </header>
+            <div class="col-sm-10 ">
+                <div class="col-sm-12 ">
+                    <div class="col-sm-4">
+                        <P>&nbsp;{{umnId}}</P>
+                        <p class="title-line">U OF M ID#</p>
+                    </div>
+                    <div class="col-sm-4 attention">
+                        <p>&nbsp;{{ssn}}</p>
+                        <p class="title-line">U.S. SOCIAL SECURITY NUMBER</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>&nbsp;{{birthday}}</p>
+                        <p class="title-line">BIRTHDAY (MONTH/DAY/YEAR)</p>
+                    </div>
+                </div>
+                <div class="col-sm-12 ">
+                    <div class="col-sm-6">
+                        <p class="title">First generation graduate/professional student?</p>
+                    </div>
+                    <div class="col-sm-6">
+                        {{#if firstGeneration}}
+                            <p class="answer-inline">Yes</p>
+                            <p class="title-line"></p>
+                        {{else}}
+                            <p class="answer-inline">No</p>
+                            <p class="title-line"></p>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="col-sm-12 ">
+                    <div class="col-sm-6">
+                        <p class="title">Highest level of education obtained by parent 1:</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="answer-inline">{{highestLevel1}}</p>
+                        <p class="title-line"></p>
+                    </div>
+                </div>
+                <div class="col-sm-12 bottom">
+                    <div class="col-sm-6">
+                        <p class="title">Highest level of education obtained by parent 2:</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="answer-inline">{{highestLevel2}}</p>
+                        <p class="title-line"></p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    {{/user.confidential}}
+
+    {{#user.employment}}
+        <!-- References -->
+        {{#if professionalReferences.length}}
+            <article class="row">
+                <header class="col-sm-2">
+                    <h3>References</h3>
+                </header>
+                <div class="col-sm-10 ">
+                    {{#each professionalReferences}}
+                        <div class="col-sm-12 ">
+                            <div class="col-sm-9">
+                                <P>&nbsp;{{name}} </P>
+                                <p class="title-line">NAME</p>
+                            </div>
+                            <div class="col-sm-3">
+                                {{#if isDirectSupervisor}}
+                                    <p>Yes</p>
+                                {{else}}
+                                    <p>No</p>
+                                {{/if}}
+                                <p class="title-line">Current supervisor?</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 ">
+                            <div class="col-sm-6">
+                                <P>&nbsp;{{phoneNumber}}</P>
+                                <p class="title-line">DAY PHONE NUMBER</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <P>&nbsp;{{email}}</P>
+                                <p class="title-line">E-MAIL ADDRESS</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 ">
+                            <div class="col-sm-6">
+                                <P>&nbsp;{{employer}}</P>
+                                <p class="title-line">COMPANY</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <P>&nbsp;{{jobTitle}}</P>
+                                <p class="title-line">TITLE</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <p class="bottom"></p>
+                        </div>
+                    {{/each}}
+                </div>
+            </article>
+        {{/if}}
+    {{/user.employment}}
+
+    <!-- Other Information -->
+    <article class="row">
+        <header class="col-sm-2">
+            <h3>Other Information</h3>
+        </header>
+        <div class="col-sm-10 attention">
+            <div class="col-sm-12 ">
+                <p class="paragraph">
+                    The Full-Time MBA Program may request University staff, faculty, alumni, and/or current students to assist you with questions
+                    concerning the University and provide you with additional information. This would be done under the direction of the
+                    MBA admissions staff. The type of information that would be released includes name, address, phone number, email address,
+                    intended field of study, undergraduate institution, and most recent employer. If you prefer NOT to receive this particular
+                    service, please select NO here.
+                </p>
+            </div>
+            <div class="col-sm-12 ">
+                <div class="col-sm-3">
+                    <p>Yes</p>
+                    <P class="title-line"></P>
+                </div>
+            </div>
+            <div class="col-sm-12 ">
+                <p class="paragraph">
+                    If you are admitted, the Full-Time MBA Program will release the resume submitted with this application to the Graduate Business
+                    Career Center for review and coaching prior to your enrollment. You will also have the opportunity to submit an updated
+                    resume to the career center before orientation. If you prefer NOT to release your resume for this purpose, please select
+                    NO here.
+                </p>
+            </div>
+            <div class="col-sm-12 ">
+                <div class="col-sm-3">
+                    <p>Yes</p>
+                    <P class="title-line"></P>
+                </div>
+            </div>
+            <div class="col-sm-12 top">
+                <div class="col-sm-4">
+                    <p class="title">How did you hear about us?</p>
+                </div>
+                <div class="col-sm-8">
+                    <p>LinkedIn</p>
+                    <p class="title-line"></p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="no-print">
+        &copy; Carlson School of Management &nbsp;&nbsp;
+        <a href="#">Download as PDF</a> | <a href="#" onclick="javascript:window.print();">Print</a> | <a href="#top">To top</a>
+
+    </footer>
+</section>
+</body>
+
+</html>
