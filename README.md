@@ -3,7 +3,7 @@ This is a Node.js-based Printing Application based on [JsonResume](https://jsonr
 ### Dependencies
 First, clone the repo, then you need to install all the npm dependencies:
 ```sh
-$ git cloen [git-repo-url]
+$ git clone [git-repo-url]
 $ npm install
 ```
 
