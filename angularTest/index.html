@@ -69,14 +69,18 @@
             // POST json file
             $scope.sendJsonFile = function() {
                 $http.get('../templates/userApplication.json').success (function (data) {
-                    // console.log(data);
                     var req = {
                         method: 'POST',
-                        url: 'http://localhost/nodeprint/server/',
-                        headers: {'Content-Type' : 'application/json'},
+                        url: 'https://ultraviolet.csom.umn.edu/nodeprint/server/',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type' : 'application/json'
+
+                        },
                         data : {json: data, temp: "ftmba"}
                     };
                     $http(req).then(function(res){
+                        console.log(req);
                         console.log(res);
                         if (res.status === 200) {
                             console.log('got the response back');
@@ -91,7 +95,7 @@
             $scope.sendJsonFileTest = function() {
                 var req = {
                     method: 'POST',
-                    url: 'http://localhost/nodeprint/server/test',
+                    url: 'https://ultraviolet.csom.umn.edu/nodeprint/server/test',
                     headers: {'Content-Type' : 'application/json'},
                     data : {name: 'John', status: "testing object"}
                 };
