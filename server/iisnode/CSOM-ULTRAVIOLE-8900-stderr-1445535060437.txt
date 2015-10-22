@@ -5,7 +5,7 @@ Error: Can't set headers after they are sent.
     at ServerResponse.send (D:\GitHub\yar00001\NodePrintApplication\node_modules\express\lib\response.js:163:12)
     at ServerResponse.json (D:\GitHub\yar00001\NodePrintApplication\node_modules\express\lib\response.js:249:15)
     at ServerResponse.send (D:\GitHub\yar00001\NodePrintApplication\node_modules\express\lib\response.js:151:21)
-    at sendRes (D:\GitHub\yar00001\NodePrintApplication\server\app.js:83:17)
+    at sendRes (D:\GitHub\yar00001\NodePrintApplication\server\app.js:54:17)
     at fn (D:\GitHub\yar00001\NodePrintApplication\node_modules\async\lib\async.js:717:34)
     at D:\GitHub\yar00001\NodePrintApplication\node_modules\async\lib\async.js:1170:16
     at D:\GitHub\yar00001\NodePrintApplication\node_modules\async\lib\async.js:172:37

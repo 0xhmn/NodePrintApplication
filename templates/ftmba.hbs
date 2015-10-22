@@ -647,79 +647,101 @@
     {{/user.academic.dualDegree}}
 
     <!-- PRESENT ADDRESS -->
-    <article class="row">
-        <header class="col-sm-2">
-            <h3>Present Address</h3>
-        </header>
-        <div class="col-sm-10 attention">
-            <div class="col-sm-12 ">
-                <p>address</p>
-                <p class="title-line">PRESENT STREET ADDRESS</p>
-            </div>
-            <div class="col-sm-12 ">
-                <p>address</p>
-                <p class="title-line">STREET LINE 2</p>
-            </div>
-            <div class="col-sm-12 ">
-                <div class="col-sm-4">
-                    <p>umn</p>
-                    <p class="title-line">CITY</p>
+    {{#user.about.preferredAddress}}
+        <article class="row">
+            <header class="col-sm-2">
+                <h3>Present Address</h3>
+            </header>
+            <div class="col-sm-10">
+                <div class="col-sm-12 ">
+                    <p>&nbsp;{{address1}}</p>
+                    <p class="title-line">PRESENT STREET ADDRESS</p>
                 </div>
-                <div class="col-sm-2">
-                    <p>FROM</p>
-                    <p class="title-line">STATE</p>
+                {{#if address2}}
+                    <div class="col-sm-12 ">
+                        <p>{{address2}}</p>
+                        <p class="title-line">STREET LINE 2</p>
+                    </div>
+                {{/if}}
+                {{#if address3}}
+                    <div class="col-sm-12 ">
+                        <p>{{address3}}</p>
+                        <p class="title-line">STREET LINE 3</p>
+                    </div>
+                {{/if}}
+                <div class="col-sm-12 ">
+                    <div class="col-sm-4">
+                        <p>&nbsp;{{city}}</p>
+                        <p class="title-line">CITY</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>&nbsp;{{stateProv}}</p>
+                        <p class="title-line">STATE</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>&nbsp;{{postalCode}}</p>
+                        <p class="title-line">ZIP</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>&nbsp;{{country}}</p>
+                        <p class="title-line">COUNTRY</p>
+                    </div>
                 </div>
-                <div class="col-sm-2">
-                    <p>TO</p>
-                    <p class="title-line">ZIP</p>
+                <div class="col-sm-12 ">
+                    <div class="col-sm-6">
+                        <p>&nbsp;{{startDate}}</p>
+                        <p class="title-line">VALID FROM (DATE)</p>
+                    </div>
+                    {{#if endDate}}
+                        <div class="col-sm-6">
+                            <p>&nbsp;{{endDate}}</p>
+                            <p class="title-line">VALID TO (DATE)</p>
+                        </div>
+                    {{/if}}
                 </div>
-                <div class="col-sm-4">
-                    <p>TO</p>
-                    <p class="title-line">COUNTRY</p>
-                </div>
-            </div>
-            <div class="col-sm-12 ">
-                <div class="col-sm-6">
-                    <p>umn</p>
-                    <p class="title-line">VALID FROM (DATE)</p>
-                </div>
-                <div class="col-sm-6">
-                    <p>FROM</p>
-                    <p class="title-line">VALID TO (DATE)</p>
-                </div>
-            </div>
 
-        </div>
-    </article>
+            </div>
+        </article>
+    {{/user.about.preferredAddress}}
 
     <!-- Phone Numbers/ E-mail/ Etc -->
-    <article class="row">
-        <header class="col-sm-2">
-            <h3>Phone Numbers/ E-mail/ Etc.</h3>
-        </header>
-        <div class="col-sm-10 attention">
-            <div class="col-sm-12 ">
-                <div class="col-sm-6">
-                    <P>PREFERED</P>
-                    <p class="title-line">EMAIL</p>
+    {{#user.contactInfo}}
+        <article class="row">
+            <header class="col-sm-2">
+                <h3>Phone Numbers/ E-mail/ Etc.</h3>
+            </header>
+            <div class="col-sm-10">
+                <div class="col-sm-12 ">
+                    <div class="col-sm-6">
+                        {{#if preferredEmail}}
+                            <P>&nbsp;{{preferredEmail}}</P>
+                            <p class="title-line">EMAIL</p>
+                        {{/if}}
+                    </div>
+                    <div class="col-sm-6">
+                        {{#if skypeId}}
+                            <P>&nbsp;{{skypeId}}</P>
+                            <p class="title-line">SKYPE ID</p>
+                        {{/if}}
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                    <p>SKYPE</p>
-                    <p class="title-line">SKYPE ID</p>
+                <div class="col-sm-12 ">
+                    <div class="col-sm-6">
+                        {{#if preferredPhone}}
+                            <P>&nbsp;{{preferredPhone}}</P>
+                            <p class="title-line">PHONE</p>
+                        {{/if}}
+                    </div>
+                    <div class="col-sm-6">
+                        {{#if twitterHandle}}
+                            <P>&nbsp;{{twitterHandle}}</P>
+                            <p class="title-line">TWITTER</p>
+                        {{/if}}
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-12 ">
-                <div class="col-sm-6">
-                    <P>PREFERED</P>
-                    <p class="title-line">PHONE</p>
-                </div>
-                <div class="col-sm-6">
-                    <p>TWITTER</p>
-                    <p class="title-line">TWITTER</p>
-                </div>
-            </div>
-        </div>
-    </article>
+        </article>
+    {{/user.contactInfo}}
 
     <!-- Residency -->
     {{#user.residency}}

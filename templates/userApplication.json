@@ -10,7 +10,18 @@
     "middleName": null,
     "previousName": null,
     "suffix": null,
-    "preferredName": null
+    "preferredName": null,
+    "preferredAddress": {
+      "startDate": "10/13/2015",
+      "endDate": null,
+      "address1": "test2",
+      "address2": null,
+      "address3": null,
+      "city": "ASSDFDS",
+      "country": "USA",
+      "stateProv": "WI",
+      "postalCode": "12345"
+    }
   },
   "confidential": {
     "hispanic": false,
@@ -405,6 +416,21 @@
       "visaInstitution": null,
       "visaInstAttended": false
     }
+  },
+  "contactInfo": {
+    "mailingAddress": {
+      "address1": "test2",
+      "address2": null,
+      "address3": null,
+      "city": "ASSDFDS",
+      "country": "USA",
+      "stateProv": "WI",
+      "postalCode": "12345"
+    },
+    "preferredEmail": "A@S.VO",
+    "preferredPhone": "1234567890",
+    "twitterHandle": null,
+    "skypeId": null
   },
   "template": {
     "templateName": "ftmba"
