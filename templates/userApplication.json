@@ -394,8 +394,8 @@
       ]
     },
     "applicationRound": {
-      "id": null,
-      "round": null
+      "id": 59,
+      "round": 2
     }
   },
   "residency": {
@@ -434,5 +434,8 @@
   },
   "template": {
     "templateName": "ftmba"
+  },
+  "advertisement": {
+    "advertisement": "Alumni"
   }
 }
