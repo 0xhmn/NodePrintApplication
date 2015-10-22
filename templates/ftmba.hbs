@@ -17,14 +17,16 @@
 <section class="container">
 
     <!-- Header -->
-    <header class="row attention">
-        <div class="col-sm-12">
-            <!--inline h1 & h2-->
-            <h1>Fulltime MBA Application</h1>
-            <h2> - </h2>
-            <h2>Fall 2016</h2>
-        </div>
-    </header>
+    {{#user.program}}
+        <header class="row attention">
+            <div class="col-sm-12">
+                <!--inline h1 & h2-->
+                <h1>{{name}}</h1>
+                <h2> - </h2>
+                <h2>{{term}}</h2>
+            </div>
+        </header>
+    {{/user.program}}
 
     <!-- ABOUT -->
     {{#user.about}}
@@ -78,7 +80,7 @@
                             {{/if}}
                     </div>
                     <div class="col-sm-5">
-                        <P class="title-inline attention">Gender?</P>
+                        <P class="title-inline">Gender?</P>
                         <p class="answer-inline">{{gender}}</p>
                     </div>
                 </div>
@@ -134,15 +136,15 @@
                 <h3 class="attention">Enterprise & Specialization Selection(s)</h3>
             </header>
             <div class="col-sm-10 ">
-                    {{#if enterprises.available.length}}
+                    {{#if enterprises.options.length}}
                         <div class="col-sm-12 ">
-                            {{#each enterprises.available}}
-                                    {{#if isSelected}}
+                            {{#each enterprises.options}}
+                                {{#if isSelected}}
                                     <div class="col-sm-6">
                                         <p>{{name}}</p>
                                         <p class="title-line">ENTERPRISE SELECTION {{@index}}</p>
                                     </div>
-                                    {{/if}}
+                                {{/if}}
                             {{/each}}
                         </div>
                     {{/if}}
@@ -262,35 +264,37 @@
                 {{/if}}
 
                 <!--GRE-->
-                <div class="col-sm-12 attention">
-                    <div class="col-sm-1">
-                        <p class="title">GRE</p>
+                {{#if gre}}
+                    <div class="col-sm-12">
+                        <div class="col-sm-1">
+                            <p class="title">GRE</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{gre.scoreDate}}</p>
+                            <p class="title-line">DATE</p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p>&nbsp;{{gre.verbalScore}}</p>
+                            <p class="title-line">VERBAL</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{gre.quantScore}}</p>
+                            <p class="title-line">QUANTITATIVE</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{gre.totalScore}}</p>
+                            <p class="title-line">TOTAL</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{gre.analyticalWritingScore}}</p>
+                            <p class="title-line">AWA</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>1010</p>
+                            <p class="title-line attention">GMAT Equiv</p>
+                        </div>
                     </div>
-                    <div class="col-sm-2">
-                        <p>01/01/2001</p>
-                        <p class="title-line">DATE</p>
-                    </div>
-                    <div class="col-sm-1">
-                        <p>1010</p>
-                        <p class="title-line">VERBAL</p>
-                    </div>
-                    <div class="col-sm-2">
-                        <p>1010</p>
-                        <p class="title-line">QUANTITATIVE</p>
-                    </div>
-                    <div class="col-sm-2">
-                        <p>1010</p>
-                        <p class="title-line">TOTAL</p>
-                    </div>
-                    <div class="col-sm-2">
-                        <p>1010</p>
-                        <p class="title-line">AWA</p>
-                    </div>
-                    <div class="col-sm-2">
-                        <p>1010</p>
-                        <p class="title-line attention">GMAT Equiv</p>
-                    </div>
-                </div>
+                {{/if}}
 
                 <!--OTHER-->
                 <div class="col-sm-12 attention">
@@ -309,21 +313,21 @@
                 </div>
 
                 <!--IBT/PBT/IELTS/PTE DATE-->
-                <div class="col-sm-12 attention">
-                    <div class="col-sm-3">
-                        <p>01/01/2001</p>
+                <div class="col-sm-12">
+                    <div class="col-sm-3 attention">
+                        <p>???</p>
                         <p class="title-line">IBT TEST DATE</p>
                     </div>
-                    <div class="col-sm-3">
-                        <p>01/01/2001</p>
+                    <div class="col-sm-3 attention">
+                        <p>???</p>
                         <p class="title-line">PBT TEST DATE</p>
                     </div>
                     <div class="col-sm-3">
-                        <p>1010</p>
+                        <p>&nbsp;{{ielts.testDate}}</p>
                         <p class="title-line">IELTS TEST DATE</p>
                     </div>
                     <div class="col-sm-3">
-                        <p>1010</p>
+                        <p>&nbsp;{{pte.testDate}}</p>
                         <p class="title-line">PTE TEST DATE</p>
                     </div>
                 </div>
@@ -413,65 +417,67 @@
                 {{/if}}
 
                 <!--PTE-->
-                <div class="col-sm-12 attention">
-                    <div class="col-sm-2">
-                        <p class="title">PTE</p>
+                {{#if pte}}
+                    <div class="col-sm-12">
+                        <div class="col-sm-2">
+                            <p class="title">PTE</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{pte.overallScore}}</p>
+                            <p class="title-line">OVERALL SCORE</p>
+                        </div>
                     </div>
-                    <div class="col-sm-2">
-                        <p>1010</p>
-                        <p class="title-line">OVERAL SCORE</p>
+                    <div class="col-sm-12">
+                        <div class="col-sm-2">
+                            <p class="small">COMMUNICATIVE SKILLS</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{pte.listeningScore}}</p>
+                            <p class="title-line">LISTENING</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{pte.readingScore}}</p>
+                            <p class="title-line">READING</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{pte.speakingScore}}</p>
+                            <p class="title-line">SPEAKING</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{pte.writingScore}}</p>
+                            <p class="title-line">WRITING</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-12 attention">
-                    <div class="col-sm-2">
-                        <p class="small">COMMUNICATIVE SKILLS</p>
+                    <div class="col-sm-12">
+                        <div class="col-sm-2">
+                            <p class="small">ENABLING SKILLS</p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p>&nbsp;{{pte.grammarScore}}</p>
+                            <p class="title-line">GRAMMAR</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{pte.oralFluencyScore}}</p>
+                            <p class="title-line">ORAL FLUENCY</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{pte.pronunciationScore}}</p>
+                            <p class="title-line">PRONUNCIATION</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{pte.writtenDiscourseScore}}</p>
+                            <p class="title-line">WRITING DISCOURSE</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>&nbsp;{{pte.speakingScore}}</p>
+                            <p class="title-line">SPELLING</p>
+                        </div>
+                        <div class="col-sm-1">
+                            <p>&nbsp;{{pte.vocabularyScore}}</p>
+                            <p class="title-line">VOCABULARY</p>
+                        </div>
                     </div>
-                    <div class="col-sm-2">
-                        <p>1010</p>
-                        <p class="title-line">LISTENING</p>
-                    </div>
-                    <div class="col-sm-2">
-                        <p>1010</p>
-                        <p class="title-line">READING</p>
-                    </div>
-                    <div class="col-sm-2">
-                        <p>1010</p>
-                        <p class="title-line">SPEAKING</p>
-                    </div>
-                    <div class="col-sm-2">
-                        <p>1010</p>
-                        <p class="title-line">WRITING</p>
-                    </div>
-                </div>
-                <div class="col-sm-12 attention">
-                    <div class="col-sm-2">
-                        <p class="small">ENABLING SKILLS</p>
-                    </div>
-                    <div class="col-sm-1">
-                        <p>1010</p>
-                        <p class="title-line">GRAMMER</p>
-                    </div>
-                    <div class="col-sm-2">
-                        <p>1010</p>
-                        <p class="title-line">ORAL FLUENCY</p>
-                    </div>
-                    <div class="col-sm-2">
-                        <p>1010</p>
-                        <p class="title-line">PRONUNCIATION</p>
-                    </div>
-                    <div class="col-sm-2">
-                        <p>1010</p>
-                        <p class="title-line">WRITING DISCOURSE</p>
-                    </div>
-                    <div class="col-sm-2">
-                        <p>1010</p>
-                        <p class="title-line">SPELLING</p>
-                    </div>
-                    <div class="col-sm-1">
-                        <p>1010</p>
-                        <p class="title-line">VOCABULARY</p>
-                    </div>
-                </div>
+                {{/if}}
 
             </div>
         </article>
@@ -486,14 +492,17 @@
             </header>
                 <div class="col-sm-10 ">
                     <div class="col-sm-12 ">
-                        <div class="col-sm-2 attention">
-                            <p>X</p>
-                            <p class="title-line">Current Position</p>
-                        </div>
-                        <div class="col-sm-2 attention">
-                            <p>X</p>
-                            <p class="title-line">Last Position</p>
-                        </div>
+                        {{#if recentEmployment.isCurrentEmployer}}
+                            <div class="col-sm-2">
+                                <p>X</p>
+                                <p class="title-line">Current Position</p>
+                            </div>
+                        {{else}}
+                            <div class="col-sm-2">
+                                <p>X</p>
+                                <p class="title-line">Last Position</p>
+                            </div>
+                        {{/if}}
                         <div class="col-sm-3">
                             <p>&nbsp;{{workExperience.fullTimeYears}}</p>
                             <p class="title-line">Year of Full-Time Experience</p>
@@ -581,48 +590,61 @@
     {{/user.employment}}
 
     <!-- Dual Degree -->
-    <article class="row">
-        <header class="col-sm-2">
-            <h3>Dual Degree</h3>
-        </header>
-        <div class="col-sm-10 attention">
-            <div class="col-sm-12 ">
-                <div class="col-sm-6">
-                    <P class="title-inline">Do you intend to pursue a dual degree?</P>
-                    <p class="answer-inline">Yes</p>
+    {{#user.academic.dualDegree}}
+        <article class="row">
+            <header class="col-sm-2">
+                <h3>Dual Degree</h3>
+            </header>
+            <div class="col-sm-10">
+                <div class="col-sm-12 ">
+                    <div class="col-sm-10">
+                        <P class="title-inline">Do you intend to pursue a dual degree?</P>
+                        {{#if isDualDegree}}
+                            <p class="answer-inline">Yes</p>
+                        {{else}}
+                            <p class="answer-inline">No</p>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="col-sm-12 ">
+                    <div class="col-sm-10">
+                        <P class="title-inline">If yes, which program?</P>
+                            {{#if isDualDegree}}
+                                    <p class="answer-inline">{{degreeProgram}}</p>
+                            {{/if}}
+                    </div>
+                </div>
+                <div class="col-sm-12 ">
+                    <div class="col-sm-10">
+                        <P class="title-inline">When do you plan to begin the MBA program?</P>
+                        {{#if degreeOptDate}}
+                            <p class="answer-inline">{{degreeOptDate}}</p>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="col-sm-12 ">
+                    <div class="col-sm-12">
+                        <P class="paragraph">I understand the parameters of the dual degree program for which I am applying, and if admitted I agree to complete
+                            the degree requirements as stated. I understand that I must be fully committed to the MBA coursework and other MBA
+                            program curricular and co-curricular activities during my first year of MBA study, and that I am permitted to register
+                            for only MBA coursework during that first year. I agree that I will not register for any coursework in another degree
+                            program, nor will I participate in any other curricular or co-curricular activities that will interfere with my commitment
+                            to the MBA program, during that time.</P>
+                    </div>
+                </div>
+                <div class="col-sm-12 ">
+                    <div class="col-sm-6">
+                        {{#if isAgreementSigned}}
+                            <p>Yes</p>
+                        {{else}}
+                            <p>No</p>
+                        {{/if}}
+                        <P class="title-line">I agree to the above statement</P>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-12 ">
-                <div class="col-sm-6">
-                    <P class="title-inline">If yes, which program?</P>
-                    <p class="answer-inline">that program</p>
-                </div>
-            </div>
-            <div class="col-sm-12 ">
-                <div class="col-sm-6">
-                    <P class="title-inline">When do you plan to begin the MBA program?</P>
-                    <p class="answer-inline">today</p>
-                </div>
-            </div>
-            <div class="col-sm-12 ">
-                <div class="col-sm-12">
-                    <P class="paragraph">I understand the parameters of the dual degree program for which I am applying, and if admitted I agree to complete
-                        the degree requirements as stated. I understand that I must be fully committed to the MBA coursework and other MBA
-                        program curricular and co-curricular activities during my first year of MBA study, and that I am permitted to register
-                        for only MBA coursework during that first year. I agree that I will not register for any coursework in another degree
-                        program, nor will I participate in any other curricular or co-curricular activities that will interfere with my commitment
-                        to the MBA program, during that time.</P>
-                </div>
-            </div>
-            <div class="col-sm-12 ">
-                <div class="col-sm-6">
-                    <p>Yes</p>
-                    <P class="title-line">I agree to the above statement</P>
-                </div>
-            </div>
-        </div>
-    </article>
-
+        </article>
+    {{/user.academic.dualDegree}}
 
     <!-- PRESENT ADDRESS -->
     <article class="row">

@@ -1,220 +1,222 @@
 {
+  "program": {
+    "id": 502,
+    "name": "Full-Time MBA",
+    "term": "Fall 2016"
+  },
   "about": {
-    "lastName": "Fierke",
-    "firstName": "Max",
+    "lastName": "Yar",
+    "firstName": "Hooman",
     "middleName": null,
     "previousName": null,
     "suffix": null,
-    "preferredName": "RED"
+    "preferredName": null
   },
   "confidential": {
     "hispanic": false,
     "raceEthnicity": [
       "White"
     ],
-    "gender": "M",
+    "gender": "Male",
     "military": false,
-    "giBill": true,
-    "vested": 0.001,
+    "giBill": false,
+    "vested": "50",
     "internationalStudent": false,
-    "umnId": "4298689",
-    "ssn": "XXX-XX-6789",
-    "birthday": "2/9/1994",
-    "firstGeneration": true,
+    "umnId": "5168317",
+    "ssn": "XXX-XX-1111",
+    "birthday": "8/31/1990",
+    "firstGeneration": false,
     "highestLevel1": "Graduate or professional degree",
-    "highestLevel2": "Bachelor's degree or equivalent"
+    "highestLevel2": "Graduate or professional degree"
   },
   "academic": {
+    "dualDegree": {
+      "isDualDegree": true,
+      "degreeProgram": "MHA/MBA",
+      "entryOption": 6,
+      "degreeOptDate": "10/21/2015",
+      "isAgreementSigned": true
+    },
     "secondary": {
-      "id": 8212828,
-      "schoolId": 231100,
-      "startDate": "9/2/2008",
-      "endDate": "5/30/2012",
-      "schoolName": "Highland Park Senior High School",
-      "location": "St Paul MN 55116 USA",
-      "diplomaName": "High School Diploma, IB Diploma",
-      "diplomaAwardedDate": "6/4/2012"
+      "id": 8462260,
+      "schoolId": null,
+      "startDate": "8/30/2015",
+      "endDate": "9/8/2015",
+      "schoolName": "sdgdggg",
+      "location": "",
+      "diplomaName": "afafsf",
+      "diplomaAwardedDate": "10/6/2015"
     },
     "universities": [
       {
-        "id": 8291867,
-        "schoolId": 301123,
-        "startDate": "8/28/2012",
-        "endDate": "12/17/2016",
-        "schoolName": "University of Minnesota-Twin Cities",
-        "location": "Minneapolis MN  USA",
-        "degreeName": "Bachelor's of Individualized Studies",
-        "degreeAwardedDate": "12/17/2016",
-        "majorCategoryId": 7,
-        "majorName": "Computer Science, Technical Writing & Communications, and IT Infrastructure",
-        "isGpaScaleStandard": true,
-        "gpa": 3.07,
-        "gpaEquiv": null,
-        "gpaScaleDesc": null,
-        "transcript": {
-          "id": 8291867,
-          "name": null,
-          "received": false,
-          "dateReceived": null,
-          "message": null,
-          "uploadedFileUuid": "3d9dee22-6d03-4c7d-855e-4b63b88bfc41",
-          "uploadedFileName": "CSoM_BrandGuide_Final Jul2014.pdf",
-          "acadHistoryId": 8291867,
-          "dateVerified": "9/24/2015",
-          "dateOfficialRec": "9/24/2015"
-        }
-      },
-      {
-        "id": 8364948,
-        "schoolId": null,
-        "startDate": "7/27/2015",
+        "id": 8462996,
+        "schoolId": 215058,
+        "startDate": "9/16/2015",
         "endDate": null,
-        "schoolName": "New Age Feelgoodery Academy",
-        "location": "",
+        "schoolName": "Califfornia State University of Long Beach",
+        "location": "Long Beach CA 90840 USA",
         "degreeName": null,
         "degreeAwardedDate": null,
         "majorCategoryId": null,
         "majorName": null,
-        "isGpaScaleStandard": false,
-        "gpa": null,
-        "gpaEquiv": "Smiley Face",
-        "gpaScaleDesc": "Smiley Face, Neutral Face, Frowny Face",
+        "isGpaScaleStandard": true,
+        "gpa": 3,
+        "gpaEquiv": null,
+        "gpaScaleDesc": null,
         "transcript": {
-          "id": 8364948,
+          "id": 8462996,
           "name": null,
           "received": false,
           "dateReceived": null,
           "message": null,
-          "uploadedFileUuid": "10623632-b6a1-48f0-ba33-8cd4c8a79b7d",
-          "uploadedFileName": "PTMBA_2011_ApplicationInstructions.pdf",
-          "acadHistoryId": 8364948,
+          "uploadedFileUuid": "",
+          "uploadedFileName": "",
+          "acadHistoryId": 8462996,
           "dateVerified": null,
           "dateOfficialRec": null
         }
       }
-    ],
-    "coursework": "SOMETHING"
+    ]
   },
   "tests": {
     "metadata": {
-      "gmatId": 8290272,
-      "greId": null,
-      "toeflId": 8291930,
-      "ieltsId": 8291941,
-      "pteId": null,
-      "eltRequirement": "required",
+      "allowedAdmitTests": [
+        "GMAT",
+        "GRE"
+      ],
+      "gmatId": 8462266,
+      "greId": 8470220,
+      "toeflId": 8470223,
+      "ieltsId": 8470182,
+      "pteId": 8470221,
+      "admitTestType": "GRE",
       "eltOptions": {
         "pte": "pte",
         "ielts": "ielts",
         "toefl": "toefl"
       },
-      "eltWaiver": {
-        "uploadedFileUuid": "c0c0d36e-00f3-4f31-9f7e-fbd1907a6bd9",
-        "uploadedFileName": "MSBAcoursedescriptionsv3.pdf"
-      },
+      "eltWaiver": null,
       "eltType": "toefl",
-      "toeflType": "ibt"
+      "toeflType": "pbt",
+      "eltRequirement": "required"
     },
     "gmat": {
-      "gmatId": 8290272,
-      "gmatScoreId": "999999",
-      "scoreDate": "1/1/2001",
+      "gmatId": 8462266,
+      "gmatScoreId": "999991",
+      "scoreDate": "9/27/2015",
       "verbalScore": 28,
-      "verbalPercentile": 6.0,
-      "quantScore": 46,
-      "quantPercentile": 6.0,
-      "analyticalWritingScore": 6.0,
-      "analyticalWritingPercentile": 6.0,
-      "reasoningScore": 6,
-      "reasoningPercentile": 12.0,
-      "totalScore": 222,
-      "totalPercentile": 6.0
+      "verbalPercentile": 13,
+      "quantScore": 6,
+      "quantPercentile": 5,
+      "analyticalWritingScore": 3.5,
+      "analyticalWritingPercentile": 4,
+      "reasoningScore": 4,
+      "reasoningPercentile": 5,
+      "totalScore": 200,
+      "totalPercentile": 4
     },
-    "gre": null,
+    "gre": {
+      "greId": 8470220,
+      "scoreDate": "10/15/2015",
+      "verbalScore": 138,
+      "verbalPercentile": 17,
+      "quantScore": 132,
+      "quantPercentile": 4,
+      "analyticalWritingScore": 4,
+      "analyticalWritingPercentile": 4,
+      "totalScore": 274
+    },
     "toefl": {
-      "toeflId": 8291930,
-      "testDate": "6/5/2015",
-      "section1": 25,
-      "section2": 25.0,
-      "section3": 25,
-      "section4": 1.0,
-      "section5": 100
+      "toeflId": null,
+      "testDate": null,
+      "section1": null,
+      "section2": null,
+      "section3": null,
+      "section4": null,
+      "section5": null
     },
     "ielts": {
-      "ieltsId": 8291941,
-      "testDate": "12/31/2011",
-      "listeningScore": 9.0,
-      "readingScore": 5.0,
-      "writingScore": 5.0,
-      "speakingScore": 5.0,
-      "totalScore": 5.0
+      "ieltsId": 8470182,
+      "testDate": "10/22/2015",
+      "listeningScore": 6,
+      "readingScore": 6,
+      "writingScore": 6,
+      "speakingScore": 6,
+      "totalScore": 8
     },
-    "pte": null
+    "pte": {
+      "pteId": 8470221,
+      "testDate": "10/15/2015",
+      "listeningScore": 10,
+      "readingScore": 14,
+      "speakingScore": 13,
+      "writingScore": 11,
+      "grammarScore": 11,
+      "oralFluencyScore": 12,
+      "pronunciationScore": 13,
+      "spellingScore": 14,
+      "writtenDiscourseScore": 14,
+      "vocabularyScore": 15,
+      "overallScore": 19
+    }
   },
   "employment": {
     "recentEmployment": {
       "employer": {
-        "id": 4702,
-        "name": "Department of Defense"
+        "id": 2736878,
+        "name": "George Smith/Grubb & Ellis Fin Se                 "
       },
-      "id": 8212834.0,
-      "jobTitle": "Senior Analyst",
-      "startDate": "4/5/1999",
-      "endDate": null,
-      "yearsInPosition": 13.0,
-      "salary": 230000.0,
-      "isFullTime": true,
-      "hoursPerWeek": 45,
+      "id": 8470212,
+      "jobTitle": "dev",
+      "startDate": "6/8/2004",
+      "endDate": "9/29/2015",
+      "yearsInPosition": 4,
+      "salary": 2000,
+      "isFullTime": false,
+      "isCurrent": true,
+      "hoursPerWeek": 20,
       "companyInfo": {
-        "employerDescription": "Covert foreign intelligence gathering, definitely nothing sinister",
-        "industryId": "A916",
-        "jobFunctionId": "B556",
-        "companySizeId": 5,
-        "annualSalesId": 1,
-        "ownershipType": "na"
-      }
+        "employerDescription": "developing",
+        "industryId": "A920",
+        "jobFunctionId": "B548",
+        "companySizeId": 3,
+        "annualSalesId": 2,
+        "ownershipType": "public"
+      },
+      "isCurrentEmployer": true
     },
-
     "militaryInfo": {
       "isVeteran": false,
-      "usingGIBill": false,
-      "giBillPercentage": null
+      "usingGIBill": true,
+      "giBillPercentage": 50
     },
     "professionalReferences": [
       {
-        "name": "Jeff",
-        "employer": "Jefferson",
-        "jobTitle": "Top Chef",
-        "email": "jeff@hefe.jeffe",
-        "phoneNumber": "555-555-5555",
+        "name": "John",
+        "employer": "sfjsfj jsljf",
+        "jobTitle": "JOb TiTle",
+        "email": "john@doe.com",
+        "phoneNumber": "555555666666",
         "isDirectSupervisor": true
       },
       {
-        "name": "Greg",
-        "employer": "Generic Names, Inc.",
-        "jobTitle": "VP of Names",
-        "email": "greg@generic.inc",
-        "phoneNumber": "123-456-7890",
-        "isDirectSupervisor": false
-      },
-      {
-        "name": "asdsad",
-        "employer": "asdasd",
-        "jobTitle": "sadsad",
-        "email": "asdasd@asdsad.com",
-        "phoneNumber": "555-888-9999",
+        "name": "sfsfsfsf",
+        "employer": "sfsfsw23",
+        "jobTitle": "wqrqr",
+        "email": "qwrwqr@wqrqr.com",
+        "phoneNumber": "99999999",
         "isDirectSupervisor": false
       }
     ],
     "workExperience": {
-      "fullTimeYears": 5
+      "fullTimeYears": 2
     },
     "resume": {
       "questionId": 90045,
       "title": "Resume",
       "prompt": "Please submit a current resume such as you would submit for a job application. Use the Browse... button to find the file you wish to upload.  This file may be in .rtf, .doc, .pdf, or .txt format.  Once you have selected the file, press the Upload button to save the file with your application materials.",
-      "uploadedFileUuid": "f45d0cf1-d81d-47f5-b9c8-55952936f26b",
-      "uploadedFileName": "ITGeneralist.pdf"
+      "uploadedFileUuid": null,
+      "uploadedFileName": null
     }
   },
   "additionalInfo": {
@@ -228,21 +230,17 @@
         "questionId": 5105960,
         "title": "Personal Statement",
         "question": "We want to admit a diverse, intellectually curious, and interesting group of students who will contribute to and benefit from the Carlson MBA Program. This section of the application helps the admissions committee get to know you better as an individual, and allows the committee to evaluate the extent to which your skills, interests, values, and career goals are well suited for the program.  Please write a personal statement <b>using no more than 750 words (2 pages)</b>, that addresses the following questions: <br/><ul><li>Briefly describe your short-term and long-term career goals. Why are you choosing to pursue an MBA at this time in your career, and what are you hoping to accomplish by doing so?</li><li>Why are you interested in pursuing an MBA at the Carlson School of Management?</li><li>What do you feel makes you a strong candidate for the program? How will you contribute to the MBA Program overall?</li></ul>",
-        "answerId": 8291913,
-        "uploadedFileUuid": "b0e30bc8-8fd1-4351-a449-276bb383aee9",
-        "uploadedFileName": "Bi-Weekly Timesheet FY13-FY14.pdf"
+        "answerId": null,
+        "uploadedFileUuid": null,
+        "uploadedFileName": null
       }
     ],
     "concentrations": {
-      "selected": [
-        8291880,
-        2612010
-      ],
       "available": [
         {
           "id": 2612008,
           "name": "Finance",
-          "isSelected": false
+          "isSelected": true
         },
         {
           "id": 8291881,
@@ -252,7 +250,7 @@
         {
           "id": 2612010,
           "name": "Information Systems & Technology (MIS)",
-          "isSelected": false
+          "isSelected": true
         },
         {
           "id": 8291880,
@@ -262,7 +260,7 @@
         {
           "id": 2612009,
           "name": "Marketing",
-          "isSelected": false
+          "isSelected": true
         },
         {
           "id": 2612011,
@@ -277,15 +275,11 @@
       ]
     },
     "enterprises": {
-      "selected": [
-        8291879,
-        8291877
-      ],
-      "available": [
+      "options": [
         {
           "id": 8291878,
           "name": "Brand Enterprise",
-          "isSelected": false
+          "isSelected": true
         },
         {
           "id": 8291879,
@@ -300,18 +294,11 @@
         {
           "id": 8291877,
           "name": "Ventures Enterprise",
-          "isSelected": true
+          "isSelected": false
         }
       ]
     },
     "advertisements": {
-      "selected": [
-        2613619,
-        2613620,
-        2613628,
-        5089250,
-        5156408
-      ],
       "available": [
         {
           "id": 2613620,
@@ -394,19 +381,32 @@
           "isSelected": false
         }
       ]
+    },
+    "applicationRound": {
+      "id": null,
+      "round": null
     }
   },
   "residency": {
-    "internationalStudent": true,
+    "internationalStudent": false,
     "birthCountry": "USA",
     "permResCountry": "USA",
     "citizenCountry": "USA",
     "stateLegalRes": "MN",
     "mnResidency": {
-      "yearsInMN": 21,
-      "monthsInMN": 5,
-      "sinceDate": "2/9/1994",
-      "reasonForMove": "Birth"
+      "yearsInMN": 1,
+      "monthsInMN": 2,
+      "sinceDate": "9/1/2015",
+      "reasonForMove": "Ha?"
+    },
+    "nonUSCitizenVisa": {
+      "visaTypeId": null,
+      "visaTypeDescription": null,
+      "visaInstitution": null,
+      "visaInstAttended": false
     }
+  },
+  "template": {
+    "templateName": "ftmba"
   }
 }
