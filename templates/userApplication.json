@@ -12,7 +12,7 @@
     "suffix": null,
     "preferredName": null,
     "preferredAddress": {
-      "startDate": "10/13/2015",
+      "startDate": "10/23/2015",
       "endDate": null,
       "address1": "test2",
       "address2": null,
@@ -35,7 +35,7 @@
     "internationalStudent": false,
     "umnId": "5168317",
     "ssn": "XXX-XX-1111",
-    "birthday": "8/31/1990",
+    "birthday": "8/8/1990",
     "firstGeneration": false,
     "highestLevel1": "Graduate or professional degree",
     "highestLevel2": "Graduate or professional degree"
@@ -435,7 +435,18 @@
   "template": {
     "templateName": "ftmba"
   },
-  "advertisement": {
-    "advertisement": "Alumni"
+  "advertisements": {
+    "advertisements": [
+      {
+        "id": 501,
+        "name": "The Black EOE Journal",
+        "isSelected": false
+      },
+      {
+        "id": 501,
+        "name": "World Wide Web",
+        "isSelected": false
+      }
+    ]
   }
 }

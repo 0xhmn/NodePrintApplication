@@ -960,19 +960,21 @@
                     </div>
                 </div>
                 {{/user.additionalInfo.additionalInfo}}
-                {{#user.advertisement}}
+                {{#user.advertisements}}
                 <div class="col-sm-12 top">
-                    {{#if advertisement}}
+                    {{#if advertisements.length}}
                         <div class="col-sm-4">
                             <p class="title">How did you hear about us?</p>
                         </div>
-                        <div class="col-sm-8">
-                            <p>{{advertisement}}</p>
-                            <p class="title-line"></p>
-                        </div>
+                        {{#each advertisements}}
+                            <div class="col-sm-6">
+                                <p>{{name}}</p>
+                                <P class="title-line"></P>
+                            </div>
+                        {{/each}}
                     {{/if}}
                 </div>
-                {{/user.advertisement}}
+                {{/user.advertisements}}
             </div>
         </article>
 
@@ -980,7 +982,7 @@
     <!-- Footer -->
     <footer class="no-print">
         &copy; Carlson School of Management &nbsp;&nbsp;
-        <a href="#">Download as PDF</a> | <a href="#" onclick="javascript:alert('wil be added soon');">Print</a> | <a href="#top">To top</a>
+        <a href="#">Download as PDF</a> | <a href="#" onclick="alert('wil be added soon');">Print</a> | <a href="#top">To top</a>
 
     </footer>
 </section>
