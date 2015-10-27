@@ -1,452 +1,471 @@
 {
-  "program": {
-    "id": 502,
-    "name": "Full-Time MBA",
-    "term": "Fall 2016"
-  },
-  "about": {
-    "lastName": "Yar",
-    "firstName": "Hooman",
-    "middleName": null,
-    "previousName": null,
-    "suffix": null,
-    "preferredName": null,
-    "preferredAddress": {
-      "startDate": "10/23/2015",
-      "endDate": null,
-      "address1": "test2",
-      "address2": null,
-      "address3": null,
-      "city": "ASSDFDS",
-      "country": "USA",
-      "stateProv": "WI",
-      "postalCode": "12345"
-    }
-  },
-  "confidential": {
-    "hispanic": false,
-    "raceEthnicity": [
-      "White"
-    ],
-    "gender": "Male",
-    "military": false,
-    "giBill": false,
-    "vested": "50",
-    "internationalStudent": false,
-    "umnId": "5168317",
-    "ssn": "XXX-XX-1111",
-    "birthday": "8/8/1990",
-    "firstGeneration": false,
-    "highestLevel1": "Graduate or professional degree",
-    "highestLevel2": "Graduate or professional degree"
-  },
-  "academic": {
-    "dualDegree": {
-      "isDualDegree": true,
-      "degreeProgram": "MHA/MBA",
-      "entryOption": 6,
-      "degreeOptDate": "10/21/2015",
-      "isAgreementSigned": true
+  "data": {
+    "program": {
+      "id": 502,
+      "name": "Full-Time MBA",
+      "term": "Fall 2017"
     },
-    "secondary": {
-      "id": 8462260,
-      "schoolId": null,
-      "startDate": "8/30/2015",
-      "endDate": "9/8/2015",
-      "schoolName": "sdgdggg",
-      "location": "",
-      "diplomaName": "afafsf",
-      "diplomaAwardedDate": "10/6/2015"
-    },
-    "universities": [
-      {
-        "id": 8462996,
-        "schoolId": 215058,
-        "startDate": "9/16/2015",
+    "about": {
+      "lastName": "Yar",
+      "firstName": "Hooman",
+      "middleName": null,
+      "previousName": null,
+      "suffix": null,
+      "preferredName": null,
+      "preferredAddress": {
+        "startDate": "10/23/2015",
         "endDate": null,
-        "schoolName": "Califfornia State University of Long Beach",
-        "location": "Long Beach CA 90840 USA",
-        "degreeName": null,
-        "degreeAwardedDate": null,
-        "majorCategoryId": null,
-        "majorName": null,
-        "isGpaScaleStandard": true,
-        "gpa": 3,
-        "gpaEquiv": null,
-        "gpaScaleDesc": null,
-        "transcript": {
-          "id": 8462996,
-          "name": null,
-          "received": false,
-          "dateReceived": null,
-          "message": null,
-          "uploadedFileUuid": "",
-          "uploadedFileName": "",
-          "acadHistoryId": 8462996,
-          "dateVerified": null,
-          "dateOfficialRec": null
-        }
+        "address1": "test2",
+        "address2": null,
+        "address3": null,
+        "city": "ASSDFDS",
+        "country": "USA",
+        "stateProv": "WI",
+        "postalCode": "12345"
       }
-    ]
-  },
-  "tests": {
-    "metadata": {
-      "allowedAdmitTests": [
-        "GMAT",
-        "GRE"
+    },
+    "confidential": {
+      "hispanic": false,
+      "raceEthnicity": [
+        "White"
       ],
-      "gmatId": 8462266,
-      "greId": 8470220,
-      "toeflId": 8470223,
-      "ieltsId": 8470182,
-      "pteId": 8470221,
-      "admitTestType": "GRE",
-      "eltOptions": {
-        "pte": "pte",
-        "ielts": "ielts",
-        "toefl": "toefl"
+      "gender": "Male",
+      "military": false,
+      "giBill": false,
+      "vested": "50",
+      "internationalStudent": false,
+      "umnId": "5168317",
+      "ssn": "XXX-XX-1111",
+      "birthday": "8/8/1990",
+      "firstGeneration": false,
+      "highestLevel1": "Graduate or professional degree",
+      "highestLevel2": "Graduate or professional degree"
+    },
+    "academic": {
+      "dualDegree": {
+        "isDualDegree": true,
+        "degreeProgram": "MHA/MBA",
+        "entryOption": 6,
+        "degreeOptDate": "10/21/2015",
+        "isAgreementSigned": true
       },
-      "eltWaiver": null,
-      "eltType": "toefl",
-      "toeflType": "pbt",
-      "eltRequirement": "required"
-    },
-    "gmat": {
-      "gmatId": 8462266,
-      "gmatScoreId": "999991",
-      "scoreDate": "9/27/2015",
-      "verbalScore": 28,
-      "verbalPercentile": 13,
-      "quantScore": 6,
-      "quantPercentile": 5,
-      "analyticalWritingScore": 3.5,
-      "analyticalWritingPercentile": 4,
-      "reasoningScore": 4,
-      "reasoningPercentile": 5,
-      "totalScore": 200,
-      "totalPercentile": 4
-    },
-    "gre": {
-      "greId": 8470220,
-      "scoreDate": "10/15/2015",
-      "verbalScore": 138,
-      "verbalPercentile": 17,
-      "quantScore": 132,
-      "quantPercentile": 4,
-      "analyticalWritingScore": 4,
-      "analyticalWritingPercentile": 4,
-      "totalScore": 274
-    },
-    "toefl": {
-      "toeflId": null,
-      "testDate": null,
-      "section1": null,
-      "section2": null,
-      "section3": null,
-      "section4": null,
-      "section5": null
-    },
-    "ielts": {
-      "ieltsId": 8470182,
-      "testDate": "10/22/2015",
-      "listeningScore": 6,
-      "readingScore": 6,
-      "writingScore": 6,
-      "speakingScore": 6,
-      "totalScore": 8
-    },
-    "pte": {
-      "pteId": 8470221,
-      "testDate": "10/15/2015",
-      "listeningScore": 10,
-      "readingScore": 14,
-      "speakingScore": 13,
-      "writingScore": 11,
-      "grammarScore": 11,
-      "oralFluencyScore": 12,
-      "pronunciationScore": 13,
-      "spellingScore": 14,
-      "writtenDiscourseScore": 14,
-      "vocabularyScore": 15,
-      "overallScore": 19
-    }
-  },
-  "employment": {
-    "recentEmployment": {
-      "employer": {
-        "id": 2736878,
-        "name": "George Smith/Grubb & Ellis Fin Se                 "
+      "secondary": {
+        "id": 8462260,
+        "schoolId": null,
+        "startDate": "8/30/2015",
+        "endDate": "9/8/2015",
+        "schoolName": "sdgdggg",
+        "location": "",
+        "diplomaName": "afafsf",
+        "diplomaAwardedDate": "10/6/2015"
       },
-      "id": 8470212,
-      "jobTitle": "dev",
-      "startDate": "6/8/2004",
-      "endDate": "9/29/2015",
-      "yearsInPosition": 4,
-      "salary": 2000,
-      "isFullTime": false,
-      "isCurrent": true,
-      "hoursPerWeek": 20,
-      "companyInfo": {
-        "employerDescription": "developing",
-        "industryId": "A920",
-        "jobFunctionId": "B548",
-        "companySizeId": 3,
-        "annualSalesId": 2,
-        "ownershipType": "public"
+      "universities": [
+        {
+          "id": 8462996,
+          "schoolId": 215058,
+          "startDate": "9/16/2015",
+          "endDate": null,
+          "schoolName": "Califfornia State University of Long Beach",
+          "location": "Long Beach CA 90840 USA",
+          "degreeName": null,
+          "degreeAwardedDate": null,
+          "majorCategoryId": null,
+          "majorName": null,
+          "isGpaScaleStandard": true,
+          "gpa": 3,
+          "gpaEquiv": null,
+          "gpaScaleDesc": null,
+          "transcript": {
+            "id": 8462996,
+            "name": null,
+            "received": false,
+            "dateReceived": null,
+            "message": null,
+            "uploadedFileUuid": "",
+            "uploadedFileName": "",
+            "acadHistoryId": 8462996,
+            "dateVerified": null,
+            "dateOfficialRec": null
+          }
+        }
+      ]
+    },
+    "tests": {
+      "metadata": {
+        "allowedAdmitTests": [
+          "GMAT",
+          "GRE"
+        ],
+        "gmatId": 8462266,
+        "greId": 8470220,
+        "toeflId": 8470395,
+        "ieltsId": 8470182,
+        "pteId": 8470221,
+        "admitTestType": "GRE",
+        "eltOptions": {
+          "pte": "pte",
+          "ielts": "ielts",
+          "toefl": "toefl"
+        },
+        "eltWaiver": null,
+        "eltType": "toefl",
+        "toeflType": "pbt",
+        "eltRequirement": "required"
       },
-      "isCurrentEmployer": true
-    },
-    "militaryInfo": {
-      "isVeteran": false,
-      "usingGIBill": true,
-      "giBillPercentage": 50
-    },
-    "professionalReferences": [
-      {
-        "name": "John",
-        "employer": "sfjsfj jsljf",
-        "jobTitle": "JOb TiTle",
-        "email": "john@doe.com",
-        "phoneNumber": "555555666666",
-        "isDirectSupervisor": true
+      "gmat": {
+        "gmatId": 8462266,
+        "gmatScoreId": "999991",
+        "scoreDate": "9/27/2015",
+        "verbalScore": 28,
+        "verbalPercentile": 13,
+        "quantScore": 6,
+        "quantPercentile": 5,
+        "analyticalWritingScore": 3.5,
+        "analyticalWritingPercentile": 4,
+        "reasoningScore": 4,
+        "reasoningPercentile": 5,
+        "totalScore": 200,
+        "totalPercentile": 4
       },
-      {
-        "name": "sfsfsfsf",
-        "employer": "sfsfsw23",
-        "jobTitle": "wqrqr",
-        "email": "qwrwqr@wqrqr.com",
-        "phoneNumber": "99999999",
-        "isDirectSupervisor": false
-      }
-    ],
-    "workExperience": {
-      "fullTimeYears": 2
+      "gre": {
+        "greId": 8470220,
+        "scoreDate": "10/15/2015",
+        "verbalScore": 138,
+        "verbalPercentile": 17,
+        "quantScore": 132,
+        "quantPercentile": 4,
+        "analyticalWritingScore": 4,
+        "analyticalWritingPercentile": 4,
+        "totalScore": 274
+      },
+      "toeflibt": null,
+      "toeflpbt": {
+        "toeflId": 8470395,
+        "testDate": "9/30/2015",
+        "section1": 50,
+        "section2": 50,
+        "section3": 50,
+        "section4": 2,
+        "section5": 310
+      },
+      "ielts": {
+        "ieltsId": 8470182,
+        "testDate": "10/22/2015",
+        "listeningScore": 6,
+        "readingScore": 6,
+        "writingScore": 6,
+        "speakingScore": 6,
+        "totalScore": 8
+      },
+      "pte": {
+        "pteId": 8470221,
+        "testDate": "10/15/2015",
+        "listeningScore": 10,
+        "readingScore": 14,
+        "speakingScore": 13,
+        "writingScore": 11,
+        "grammarScore": 11,
+        "oralFluencyScore": 12,
+        "pronunciationScore": 13,
+        "spellingScore": 14,
+        "writtenDiscourseScore": 14,
+        "vocabularyScore": 15,
+        "overallScore": 19
+      },
+      "gmatEquivTotal": null
     },
-    "resume": {
-      "questionId": 90045,
-      "title": "Resume",
-      "prompt": "Please submit a current resume such as you would submit for a job application. Use the Browse... button to find the file you wish to upload.  This file may be in .rtf, .doc, .pdf, or .txt format.  Once you have selected the file, press the Upload button to save the file with your application materials.",
-      "uploadedFileUuid": null,
-      "uploadedFileName": null
-    }
-  },
-  "additionalInfo": {
-    "additionalInfo": {
-      "contactByStudent": true,
-      "releaseInfo": true
-    },
-    "essays": [
-      {
-        "isRequired": true,
-        "questionId": 5105960,
-        "title": "Personal Statement",
-        "question": "We want to admit a diverse, intellectually curious, and interesting group of students who will contribute to and benefit from the Carlson MBA Program. This section of the application helps the admissions committee get to know you better as an individual, and allows the committee to evaluate the extent to which your skills, interests, values, and career goals are well suited for the program.  Please write a personal statement <b>using no more than 750 words (2 pages)</b>, that addresses the following questions: <br/><ul><li>Briefly describe your short-term and long-term career goals. Why are you choosing to pursue an MBA at this time in your career, and what are you hoping to accomplish by doing so?</li><li>Why are you interested in pursuing an MBA at the Carlson School of Management?</li><li>What do you feel makes you a strong candidate for the program? How will you contribute to the MBA Program overall?</li></ul>",
-        "answerId": null,
+    "employment": {
+      "recentEmployment": {
+        "employer": {
+          "id": 2736878,
+          "name": "George Smith/Grubb & Ellis Fin Se                 "
+        },
+        "id": 8470212,
+        "jobTitle": "dev",
+        "startDate": "6/8/2004",
+        "endDate": "9/29/2015",
+        "yearsInPosition": 4,
+        "salary": 2000,
+        "isFullTime": false,
+        "isCurrent": true,
+        "hoursPerWeek": 20,
+        "companyInfo": {
+          "employerDescription": "developing",
+          "industryId": "A920",
+          "jobFunctionId": "B548",
+          "companySizeId": 3,
+          "annualSalesId": 2,
+          "ownershipType": "public"
+        },
+        "isCurrentEmployer": true
+      },
+      "militaryInfo": {
+        "isVeteran": false,
+        "usingGIBill": true,
+        "giBillPercentage": 50
+      },
+      "professionalReferences": [
+        {
+          "name": "John",
+          "employer": "sfjsfj jsljf",
+          "jobTitle": "JOb TiTle",
+          "email": "john@doe.com",
+          "phoneNumber": "555555666666",
+          "isDirectSupervisor": true
+        },
+        {
+          "name": "sfsfsfsf",
+          "employer": "sfsfsw23",
+          "jobTitle": "wqrqr",
+          "email": "qwrwqr@wqrqr.com",
+          "phoneNumber": "99999999",
+          "isDirectSupervisor": false
+        }
+      ],
+      "workExperience": {
+        "fullTimeYears": 2
+      },
+      "resume": {
+        "questionId": 90045,
+        "title": "Resume",
+        "prompt": "Please submit a current resume such as you would submit for a job application. Use the Browse... button to find the file you wish to upload.  This file may be in .rtf, .doc, .pdf, or .txt format.  Once you have selected the file, press the Upload button to save the file with your application materials.",
         "uploadedFileUuid": null,
         "uploadedFileName": null
       }
-    ],
-    "concentrations": {
-      "available": [
-        {
-          "id": 2612008,
-          "name": "Finance",
-          "isSelected": true
-        },
-        {
-          "id": 8291881,
-          "name": "Health Care",
-          "isSelected": false
-        },
-        {
-          "id": 2612010,
-          "name": "Information Systems & Technology (MIS)",
-          "isSelected": true
-        },
-        {
-          "id": 8291880,
-          "name": "Management",
-          "isSelected": false
-        },
-        {
-          "id": 2612009,
-          "name": "Marketing",
-          "isSelected": true
-        },
-        {
-          "id": 2612011,
-          "name": "Supply Chain & Operations",
-          "isSelected": false
-        },
-        {
-          "id": 21,
-          "name": "Undecided",
-          "isSelected": false
-        }
-      ]
     },
-    "enterprises": {
-      "options": [
+    "additionalInfo": {
+      "additionalInfo": {
+        "contactByStudent": true,
+        "releaseInfo": true
+      },
+      "essays": [
         {
-          "id": 8291878,
-          "name": "Brand Enterprise",
-          "isSelected": true
-        },
-        {
-          "id": 8291879,
-          "name": "Consulting Enterprise",
-          "isSelected": true
-        },
-        {
-          "id": 8291876,
-          "name": "Funds Enterprise",
-          "isSelected": true
-        },
-        {
-          "id": 8291877,
-          "name": "Ventures Enterprise",
-          "isSelected": false
+          "isRequired": true,
+          "questionId": 5105960,
+          "title": "Personal Statement",
+          "question": "We want to admit a diverse, intellectually curious, and interesting group of students who will contribute to and benefit from the Carlson MBA Program. This section of the application helps the admissions committee get to know you better as an individual, and allows the committee to evaluate the extent to which your skills, interests, values, and career goals are well suited for the program.  Please write a personal statement <b>using no more than 750 words (2 pages)</b>, that addresses the following questions: <br/><ul><li>Briefly describe your short-term and long-term career goals. Why are you choosing to pursue an MBA at this time in your career, and what are you hoping to accomplish by doing so?</li><li>Why are you interested in pursuing an MBA at the Carlson School of Management?</li><li>What do you feel makes you a strong candidate for the program? How will you contribute to the MBA Program overall?</li></ul>",
+          "answerId": null,
+          "uploadedFileUuid": null,
+          "uploadedFileName": null
         }
-      ]
+      ],
+      "concentrations": {
+        "available": [
+          {
+            "id": 2612008,
+            "name": "Finance",
+            "isSelected": true
+          },
+          {
+            "id": 8291881,
+            "name": "Health Care",
+            "isSelected": false
+          },
+          {
+            "id": 2612010,
+            "name": "Information Systems & Technology (MIS)",
+            "isSelected": true
+          },
+          {
+            "id": 8291880,
+            "name": "Management",
+            "isSelected": false
+          },
+          {
+            "id": 2612009,
+            "name": "Marketing",
+            "isSelected": true
+          },
+          {
+            "id": 2612011,
+            "name": "Supply Chain & Operations",
+            "isSelected": false
+          },
+          {
+            "id": 21,
+            "name": "Undecided",
+            "isSelected": false
+          }
+        ]
+      },
+      "enterprises": {
+        "options": [
+          {
+            "id": 8291878,
+            "name": "Brand Enterprise",
+            "isSelected": true
+          },
+          {
+            "id": 8291879,
+            "name": "Consulting Enterprise",
+            "isSelected": true
+          },
+          {
+            "id": 8291876,
+            "name": "Funds Enterprise",
+            "isSelected": true
+          },
+          {
+            "id": 8291877,
+            "name": "Ventures Enterprise",
+            "isSelected": false
+          }
+        ]
+      },
+      "advertisements": {
+        "available": [
+          {
+            "id": 2613620,
+            "name": "Admissions staff",
+            "isSelected": false
+          },
+          {
+            "id": 5156395,
+            "name": "Airport Advertisement",
+            "isSelected": false
+          },
+          {
+            "id": 2613619,
+            "name": "Alumni",
+            "isSelected": false
+          },
+          {
+            "id": 5156408,
+            "name": "Billboard",
+            "isSelected": false
+          },
+          {
+            "id": 5156360,
+            "name": "Business Contact/Colleague/Friend",
+            "isSelected": false
+          },
+          {
+            "id": 4467346,
+            "name": "Carlson School website",
+            "isSelected": false
+          },
+          {
+            "id": 5156409,
+            "name": "Corporate Visit",
+            "isSelected": false
+          },
+          {
+            "id": 2613628,
+            "name": "Current Student",
+            "isSelected": false
+          },
+          {
+            "id": 5156431,
+            "name": "Ed Fair",
+            "isSelected": false
+          },
+          {
+            "id": 5931617,
+            "name": "Facebook/Twitter/LinkedIn",
+            "isSelected": false
+          },
+          {
+            "id": 2613629,
+            "name": "Faculty",
+            "isSelected": false
+          },
+          {
+            "id": 5089250,
+            "name": "GMASS",
+            "isSelected": false
+          },
+          {
+            "id": 5485402,
+            "name": "Magazine Advertizement",
+            "isSelected": false
+          },
+          {
+            "id": 5156448,
+            "name": "Minnesota Public Radio (MPR)",
+            "isSelected": false
+          },
+          {
+            "id": 2613649,
+            "name": "Other",
+            "isSelected": false
+          },
+          {
+            "id": 5156362,
+            "name": "StarTribune online",
+            "isSelected": false
+          }
+        ]
+      },
+      "applicationRound": {
+        "id": 59,
+        "round": 2
+      }
+    },
+    "residency": {
+      "internationalStudent": false,
+      "birthCountry": "USA",
+      "permResCountry": "USA",
+      "citizenCountry": "USA",
+      "stateLegalRes": "MN",
+      "mnResidency": {
+        "yearsInMN": 1,
+        "monthsInMN": 2,
+        "sinceDate": "9/1/2015",
+        "reasonForMove": "Ha?"
+      },
+      "nonUSCitizenVisa": {
+        "visaTypeId": null,
+        "visaTypeDescription": null,
+        "visaInstitution": null,
+        "visaInstAttended": false
+      }
+    },
+    "contactInfo": {
+      "mailingAddress": {
+        "address1": "test2",
+        "address2": null,
+        "address3": null,
+        "city": "ASSDFDS",
+        "country": "USA",
+        "stateProv": "WI",
+        "postalCode": "12345"
+      },
+      "preferredEmail": "A@S.VO",
+      "preferredPhone": "1234567890",
+      "twitterHandle": null,
+      "skypeId": null
+    },
+    "template": {
+      "templateName": "ftmba"
     },
     "advertisements": {
-      "available": [
+      "availableAdvertisements": [
         {
-          "id": 2613620,
-          "name": "Admissions staff",
+          "id": 501,
+          "name": "The Black EOE Journal                             ",
           "isSelected": false
         },
         {
-          "id": 5156395,
-          "name": "Airport Advertisement",
-          "isSelected": false
-        },
-        {
-          "id": 2613619,
-          "name": "Alumni",
-          "isSelected": false
-        },
-        {
-          "id": 5156408,
-          "name": "Billboard",
-          "isSelected": false
-        },
-        {
-          "id": 5156360,
-          "name": "Business Contact/Colleague/Friend",
-          "isSelected": false
-        },
-        {
-          "id": 4467346,
-          "name": "Carlson School website",
-          "isSelected": false
-        },
-        {
-          "id": 5156409,
-          "name": "Corporate Visit",
-          "isSelected": false
-        },
-        {
-          "id": 2613628,
-          "name": "Current Student",
-          "isSelected": false
-        },
-        {
-          "id": 5156431,
-          "name": "Ed Fair",
-          "isSelected": false
-        },
-        {
-          "id": 5931617,
-          "name": "Facebook/Twitter/LinkedIn",
-          "isSelected": false
-        },
-        {
-          "id": 2613629,
-          "name": "Faculty",
-          "isSelected": false
-        },
-        {
-          "id": 5089250,
-          "name": "GMASS",
-          "isSelected": false
-        },
-        {
-          "id": 5485402,
-          "name": "Magazine Advertizement",
-          "isSelected": false
-        },
-        {
-          "id": 5156448,
-          "name": "Minnesota Public Radio (MPR)",
-          "isSelected": false
-        },
-        {
-          "id": 2613649,
-          "name": "Other",
-          "isSelected": false
-        },
-        {
-          "id": 5156362,
-          "name": "StarTribune online",
+          "id": 501,
+          "name": "World Wide Web",
           "isSelected": false
         }
       ]
-    },
-    "applicationRound": {
-      "id": 59,
-      "round": 2
     }
   },
-  "residency": {
-    "internationalStudent": false,
-    "birthCountry": "USA",
-    "permResCountry": "USA",
-    "citizenCountry": "USA",
-    "stateLegalRes": "MN",
-    "mnResidency": {
-      "yearsInMN": 1,
-      "monthsInMN": 2,
-      "sinceDate": "9/1/2015",
-      "reasonForMove": "Ha?"
-    },
-    "nonUSCitizenVisa": {
-      "visaTypeId": null,
-      "visaTypeDescription": null,
-      "visaInstitution": null,
-      "visaInstAttended": false
+  "status": 200,
+  "config": {
+    "method": "GET",
+    "transformRequest": [
+      null
+    ],
+    "transformResponse": [
+      null
+    ],
+    "url": "https://ultraviolet.csom.umn.edu/onlineapp/ftmba/term/fall-2016/application",
+    "headers": {
+      "Accept": "application/json, text/plain, */*"
     }
   },
-  "contactInfo": {
-    "mailingAddress": {
-      "address1": "test2",
-      "address2": null,
-      "address3": null,
-      "city": "ASSDFDS",
-      "country": "USA",
-      "stateProv": "WI",
-      "postalCode": "12345"
-    },
-    "preferredEmail": "A@S.VO",
-    "preferredPhone": "1234567890",
-    "twitterHandle": null,
-    "skypeId": null
-  },
-  "template": {
-    "templateName": "ftmba"
-  },
-  "advertisements": {
-    "advertisements": [
-      {
-        "id": 501,
-        "name": "The Black EOE Journal",
-        "isSelected": false
-      },
-      {
-        "id": 501,
-        "name": "World Wide Web",
-        "isSelected": false
-      }
-    ]
-  }
+  "statusText": "OK"
 }
