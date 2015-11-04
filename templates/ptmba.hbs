@@ -19,7 +19,7 @@
 
     <!-- Header -->
     {{#user.program}}
-        <header class="row attention">
+        <header class="row">
             <div class="col-sm-12">
                 <!--inline h1 & h2-->
                 <h1>{{name}}</h1>
@@ -184,11 +184,11 @@
             <div class="col-sm-10 ">
                 <h5>Secondary school (high school)</h5>
                 <div class="col-sm-12 ">
-                    <div class="col-sm-7">
+                    <div class="col-sm-9">
                         <p>{{secondary.schoolName}} - {{secondary.location}}</p>
                         <p class="title-line">NAME AND LOCATION</p>
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-3">
                         <p>{{secondary.startDate}} - {{secondary.endDate}}</p>
                         <p class="title-line">FROM -- TO</p>
                     </div>
@@ -206,22 +206,22 @@
                             <h5>College, university, and/or graduate school</h5>
                         </div>
                         <div class="col-sm-12 ">
-                            <div class="col-sm-7">
+                            <div class="col-sm-9">
                                 <p>{{schoolName}} - {{location}}</p>
                                 <p class="title-line">NAME AND LOCATION</p>
                             </div>
-                            <div class="col-sm-5">
+                            <div class="col-sm-3">
                                 <p>{{startDate}} - {{endDate}}</p>
                                 <p class="title-line">FROM -- TO</p>
                             </div>
                         </div>
                         <div class="col-sm-12 ">
-                            <div class="col-sm-7">
+                            <div class="col-sm-9">
                                 <p>{{degreeName}} - {{degreeAwardedDate}}</p>
                                 <p class="title-line">DEGREE, MAJOR, DATE AWARDED</p>
                             </div>
                             {{#if gpa}}
-                                <div class="col-sm-5">
+                                <div class="col-sm-3">
                                     <p>{{gpa}}</p>
                                     <p class="title-line">GPA</p>
                                 </div>
@@ -389,7 +389,7 @@
 
                 <!--PBT-->
                 {{#if toeflpbt}}
-                    <div class="col-sm-12">
+                    <div class="col-sm-12 top">
                         <div class="col-sm-2">
                             <p class="title">PBT TOEFL</p>
                         </div>
@@ -522,7 +522,7 @@
         </header>
     <div class="col-sm-10 ">
         <div class="col-sm-12 ">
-            {{#if recentEmployment.isCurrentEmployer}}
+            {{#if recentEmployment.isCurrent}}
                 <div class="col-sm-2">
                     <p>X</p>
                     <p class="title-line">Current Position</p>
@@ -592,13 +592,13 @@
             {{#if recentEmploymentDetail.industryName}}
                 <div class="col-sm-6">
                     <p>{{recentEmploymentDetail.industryName}}</p>
-                    <p class="title-line attention">INDUSTRY</p>
+                    <p class="title-line">INDUSTRY</p>
                 </div>
             {{/if}}
             {{#if recentEmploymentDetail.jobFucntion}}
                 <div class="col-sm-6">
                     <p>{{recentEmploymentDetail.jobFucntion}}</p>
-                    <p class="title-line attention">JOB FUNCTION</p>
+                    <p class="title-line">JOB FUNCTION</p>
                 </div>
             {{/if}}
         </div>
@@ -606,13 +606,13 @@
             {{#if recentEmploymentDetail.companySize}}
                 <div class="col-sm-4">
                     <p>{{recentEmploymentDetail.companySize}}</p>
-                    <p class="title-line attention">COMPANY SIZE</p>
+                    <p class="title-line">COMPANY SIZE</p>
                 </div>
             {{/if}}
             {{#if recentEmploymentDetail.annualSale}}
                 <div class="col-sm-4">
                     <p>{{recentEmploymentDetail.annualSale}}</p>
-                    <p class="title-line attention">ANNUAL SALES</p>
+                    <p class="title-line">ANNUAL SALES</p>
                 </div>
             {{/if}}
             {{#if recentEmploymentDetail.ownership}}
@@ -626,7 +626,7 @@
             <div class="col-sm-12 ">
                 <div class="col-sm-12">
                     <p>{{recentEmploymentDetail.natureOfActivity}}</p>
-                    <p class="title-line attention">NATURE OF EMPLOYER'S ACTIVITIES</p>
+                    <p class="title-line">NATURE OF EMPLOYER'S ACTIVITIES</p>
                 </div>
             </div>
         {{/if}}
@@ -796,51 +796,69 @@
             </header>
             <div class="col-sm-10 ">
                 <div class="col-sm-12 ">
-                    <div class="col-sm-6">
-                        <P>&nbsp;{{stateLegalRes}}</P>
-                        <p class="title-line">STATE OF LEGAL RESIDENCE</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p>&nbsp;{{permResCountry}}</p>
-                        <p class="title-line">COUNTRY OF PERMANENT RESIDENCE</p>
-                    </div>
+                    {{#if stateLegalRes}}
+                        <div class="col-sm-6">
+                            <P>{{stateLegalRes}}</P>
+                            <p class="title-line">STATE OF LEGAL RESIDENCE</p>
+                        </div>
+                    {{/if}}
+                    {{#if permResCountry}}
+                        <div class="col-sm-6">
+                            <p>{{permResCountry}}</p>
+                            <p class="title-line">COUNTRY OF PERMANENT RESIDENCE</p>
+                        </div>
+                    {{/if}}
                 </div>
                 <div class="col-sm-12 ">
-                    <div class="col-sm-6">
-                        <p>&nbsp;{{birthCountry}}</p>
-                        <p class="title-line">COUNTRY OF BIRTH</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p>&nbsp;{{permResCountry}}</p>
-                        <p class="title-line">COUNTRY OF CITIZENSHIP</p>
-                    </div>
+                    {{#if birthCountry}}
+                        <div class="col-sm-6">
+                            <p>{{birthCountry}}</p>
+                            <p class="title-line">COUNTRY OF BIRTH</p>
+                        </div>
+                    {{/if}}
+                    {{#if permResCountry}}
+                        <div class="col-sm-6">
+                            <p>{{permResCountry}}</p>
+                            <p class="title-line">COUNTRY OF CITIZENSHIP</p>
+                        </div>
+                    {{/if}}
                 </div>
+
                 {{#if internationalStudent}}
-                    <div class="col-sm-12 ">
-                        <div class="col-sm-3">
-                            <p class="title attention">Visa type</p>
+                    {{#if nonUSCitizenVisa.visaTypeId}}
+                        <div class="col-sm-12 ">
+                            <div class="col-sm-3">
+                                <p class="title">Visa type</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p>{{nonUSCitizenVisa.visaTypeId}}</p>
+                                <p class="title-line"></p>
+                            </div>
                         </div>
-                        <div class="col-sm-9">
-                            <p>visa type</p>
-                            <p class="title-line"></p>
+                    {{/if}}
+                    {{#if nonUSCitizenVisa.visaInstitution}}
+                        <div class="col-sm-12 ">
+                            <div class="col-sm-3">
+                                <p class="title">F-1 School</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p>{{nonUSCitizenVisa.visaInstitution}}</p>
+                                <p class="title-line"></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-12 ">
-                        <div class="col-sm-3">
-                            <p class="title attention">F-1 School</p>
-                        </div>
-                        <div class="col-sm-9">
-                            <p>f-1 school</p>
-                            <p class="title-line"></p>
-                        </div>
-                    </div>
+                    {{/if}}
                     <div class="col-sm-12 bottom">
-                        <div class="col-sm-3 attention">
+                        <div class="col-sm-3">
                             <p class="title">Attended that institution?</p>
                         </div>
                         <div class="col-sm-9">
-                            <p>Yes</p>
-                            <p class="title-line"></p>
+                            {{#if nonUSCitizenVisa.visaInstAttended}}
+                                <p>Yes</p>
+                                <p class="title-line"></p>
+                            {{else}}
+                                <p>No</p>
+                                <p class="title-line"></p>
+                            {{/if}}
                         </div>
                     </div>
                 {{/if}}
@@ -980,16 +998,16 @@
             <h3>Other Information</h3>
         </header>
         <div class="col-sm-10">
+            <div class="col-sm-12 ">
+                <p class="paragraph">
+                    The {{user.program.name}} Program may request University staff, faculty, alumni, and/or current students to assist you with questions
+                    concerning the University and provide you with additional information. This would be done under the direction of the
+                    MBA admissions staff. The type of information that would be released includes name, address, phone number, email address,
+                    intended field of study, undergraduate institution, and most recent employer. If you prefer NOT to receive this particular
+                    service, please select NO here.
+                </p>
+            </div>
             {{#user.additionalInfo.additionalInfo}}
-                <div class="col-sm-12 ">
-                    <p class="paragraph">
-                        The Full-Time MBA Program may request University staff, faculty, alumni, and/or current students to assist you with questions
-                        concerning the University and provide you with additional information. This would be done under the direction of the
-                        MBA admissions staff. The type of information that would be released includes name, address, phone number, email address,
-                        intended field of study, undergraduate institution, and most recent employer. If you prefer NOT to receive this particular
-                        service, please select NO here.
-                    </p>
-                </div>
                 <div class="col-sm-12 ">
                     <div class="col-sm-3">
                         {{#if releaseInfo}}
@@ -1026,12 +1044,14 @@
                         <div class="col-sm-4">
                             <p class="title">How did you hear about us?</p>
                         </div>
-                        {{#each availableAdvertisements}}
-                            <div class="col-sm-6">
-                                <p>{{name}}</p>
-                                <P class="title-line attention"></P>
-                            </div>
-                        {{/each}}
+                        <div class="col-sm-6">
+                            {{#each availableAdvertisements}}
+                                <div class="col-sm-12">
+                                    <p>{{name}}</p>
+                                    <P class="title-line"></P>
+                                </div>
+                            {{/each}}
+                        </div>
                     {{/if}}
                 </div>
             {{/user.advertisements}}

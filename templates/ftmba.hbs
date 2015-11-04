@@ -389,7 +389,7 @@
 
                 <!--PBT-->
                 {{#if toeflpbt}}
-                    <div class="col-sm-12">
+                    <div class="col-sm-12 top">
                         <div class="col-sm-2">
                             <p class="title">PBT TOEFL</p>
                         </div>
@@ -522,7 +522,7 @@
             </header>
                 <div class="col-sm-10 ">
                     <div class="col-sm-12 ">
-                        {{#if recentEmployment.isCurrentEmployer}}
+                        {{#if recentEmployment.isCurrent}}
                             <div class="col-sm-2">
                                 <p>X</p>
                                 <p class="title-line">Current Position</p>
@@ -796,51 +796,69 @@
             </header>
             <div class="col-sm-10 ">
                 <div class="col-sm-12 ">
+                    {{#if stateLegalRes}}
                     <div class="col-sm-6">
-                        <P>&nbsp;{{stateLegalRes}}</P>
+                        <P>{{stateLegalRes}}</P>
                         <p class="title-line">STATE OF LEGAL RESIDENCE</p>
                     </div>
-                    <div class="col-sm-6">
-                        <p>&nbsp;{{permResCountry}}</p>
-                        <p class="title-line">COUNTRY OF PERMANENT RESIDENCE</p>
-                    </div>
+                    {{/if}}
+                    {{#if permResCountry}}
+                        <div class="col-sm-6">
+                            <p>{{permResCountry}}</p>
+                            <p class="title-line">COUNTRY OF PERMANENT RESIDENCE</p>
+                        </div>
+                    {{/if}}
                 </div>
                 <div class="col-sm-12 ">
-                    <div class="col-sm-6">
-                        <p>&nbsp;{{birthCountry}}</p>
-                        <p class="title-line">COUNTRY OF BIRTH</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p>&nbsp;{{permResCountry}}</p>
-                        <p class="title-line">COUNTRY OF CITIZENSHIP</p>
-                    </div>
+                    {{#if birthCountry}}
+                        <div class="col-sm-6">
+                            <p>{{birthCountry}}</p>
+                            <p class="title-line">COUNTRY OF BIRTH</p>
+                        </div>
+                    {{/if}}
+                    {{#if permResCountry}}
+                        <div class="col-sm-6">
+                            <p>{{permResCountry}}</p>
+                            <p class="title-line">COUNTRY OF CITIZENSHIP</p>
+                        </div>
+                    {{/if}}
                 </div>
+
                 {{#if internationalStudent}}
+                    {{#if nonUSCitizenVisa.visaTypeId}}
+                        <div class="col-sm-12 ">
+                            <div class="col-sm-3">
+                                <p class="title">Visa type</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p>{{nonUSCitizenVisa.visaTypeId}}</p>
+                                <p class="title-line"></p>
+                            </div>
+                        </div>
+                    {{/if}}
+                {{#if nonUSCitizenVisa.visaInstitution}}
                     <div class="col-sm-12 ">
                         <div class="col-sm-3">
-                            <p class="title attention">Visa type</p>
+                            <p class="title">F-1 School</p>
                         </div>
                         <div class="col-sm-9">
-                            <p>visa type</p>
+                            <p>{{nonUSCitizenVisa.visaInstitution}}</p>
                             <p class="title-line"></p>
                         </div>
                     </div>
-                    <div class="col-sm-12 ">
-                        <div class="col-sm-3">
-                            <p class="title attention">F-1 School</p>
-                        </div>
-                        <div class="col-sm-9">
-                            <p>f-1 school</p>
-                            <p class="title-line"></p>
-                        </div>
-                    </div>
+                {{/if}}
                     <div class="col-sm-12 bottom">
-                        <div class="col-sm-3 attention">
+                        <div class="col-sm-3">
                             <p class="title">Attended that institution?</p>
                         </div>
                         <div class="col-sm-9">
-                            <p>Yes</p>
-                            <p class="title-line"></p>
+                            {{#if nonUSCitizenVisa.visaInstAttended}}
+                                <p>Yes</p>
+                                <p class="title-line"></p>
+                            {{else}}
+                                <p>No</p>
+                                <p class="title-line"></p>
+                            {{/if}}
                         </div>
                     </div>
                 {{/if}}
@@ -980,16 +998,16 @@
                 <h3>Other Information</h3>
             </header>
             <div class="col-sm-10">
-                {{#user.additionalInfo.additionalInfo}}
                 <div class="col-sm-12 ">
                     <p class="paragraph">
-                        The Full-Time MBA Program may request University staff, faculty, alumni, and/or current students to assist you with questions
+                        The {{user.program.name}} Program may request University staff, faculty, alumni, and/or current students to assist you with questions
                         concerning the University and provide you with additional information. This would be done under the direction of the
                         MBA admissions staff. The type of information that would be released includes name, address, phone number, email address,
                         intended field of study, undergraduate institution, and most recent employer. If you prefer NOT to receive this particular
                         service, please select NO here.
                     </p>
                 </div>
+                {{#user.additionalInfo.additionalInfo}}
                 <div class="col-sm-12 ">
                     <div class="col-sm-3">
                         {{#if releaseInfo}}

@@ -2,7 +2,7 @@
   "program": {
     "id": 502,
     "name": "Full-Time MBA",
-    "term": "Fall 2016"
+    "term": "Fall 2017"
   },
   "about": {
     "lastName": "Yar",
@@ -12,7 +12,7 @@
     "suffix": null,
     "preferredName": null,
     "preferredAddress": {
-      "startDate": "10/23/2015",
+      "startDate": "11/4/2015",
       "endDate": null,
       "address1": "test2",
       "address2": null,
@@ -32,7 +32,7 @@
     "military": false,
     "giBill": false,
     "vested": "50",
-    "internationalStudent": false,
+    "internationalStudent": true,
     "umnId": "5168317",
     "ssn": "XXX-XX-1111",
     "birthday": "8/8/1990",
@@ -195,8 +195,7 @@
         "companySizeId": 3,
         "annualSalesId": 2,
         "ownershipType": "public"
-      },
-      "isCurrentEmployer": true
+      }
     },
     "militaryInfo": {
       "isVeteran": false,
@@ -401,22 +400,22 @@
     }
   },
   "residency": {
-    "internationalStudent": false,
-    "birthCountry": "USA",
-    "permResCountry": "USA",
-    "citizenCountry": "USA",
-    "stateLegalRes": "MN",
+    "internationalStudent": true,
+    "birthCountry": "AUT",
+    "permResCountry": "AUS",
+    "citizenCountry": "BHR",
+    "stateLegalRes": null,
     "mnResidency": {
-      "yearsInMN": 1,
-      "monthsInMN": 2,
-      "sinceDate": "9/1/2015",
-      "reasonForMove": "Ha?"
+      "yearsInMN": null,
+      "monthsInMN": null,
+      "sinceDate": null,
+      "reasonForMove": null
     },
     "nonUSCitizenVisa": {
-      "visaTypeId": null,
-      "visaTypeDescription": null,
-      "visaInstitution": null,
-      "visaInstAttended": false
+      "visaTypeId": "F1",
+      "visaTypeDescription": "no other",
+      "visaInstitution": "institution name",
+      "visaInstAttended": true
     }
   },
   "contactInfo": {
