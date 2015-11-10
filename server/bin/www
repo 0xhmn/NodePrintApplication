@@ -29,7 +29,7 @@ if (cluster.isMaster) {
   var app = require('../app');
   var options = {
     pfx: fs.readFileSync(path.resolve(__dirname, 'ultraviolet.csom.umn.edu.pfx')),
-    passphrase: 'Ef36hFzVa549'
+    passphrase: ''
   };
   var server = https.createServer(options, app);
   server.listen(3000);
