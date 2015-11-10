@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+var https = require('https');
+var fs = require('fs');
+var path = require('path');
+var cluster = require('cluster');
+
+if (cluster.isMaster) {
+    var numWorkers = require('os').cpus().length;                   // using all available cpus
+
+    console.log('Master cluster setting up ' + numWorkers + ' cpus');
+
+    for(var i = 0; i < numWorkers; i++) {
+        cluster.fork();
+    }
+
+    cluster.on('online', function(worker) {
+        console.log('Worker ' + worker.process.pid + ' is online');
+    });
+
+    cluster.on('exit', function(worker, code, signal) {
+        console.log('Worker ' + worker.process.pid + ' died with code: ' + code + ', and signal: ' + signal);
+        console.log('Starting a new worker');
+        cluster.fork();
+    });
+} else {
+  /**
+  * Create HTTPS server.
+  */
+  var app = require('../app');
+  var options = {
+    pfx: fs.readFileSync(path.resolve(__dirname, 'ultraviolet.csom.umn.edu.pfx')),
+    passphrase: 'Ef36hFzVa549'
+  };
+  var server = https.createServer(options, app);
+  server.listen(3000);
+}
+
+
