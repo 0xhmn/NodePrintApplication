@@ -5,4 +5,4 @@ node_modules
 # Siege logs
 siege.log
 # ssh folder
-server/bin/*.pfx
+*.pfx
