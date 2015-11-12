@@ -4,3 +4,5 @@ node_modules
 .idea
 # Siege logs
 siege.log
+# ssh folder
+server/bin/*.pfx
