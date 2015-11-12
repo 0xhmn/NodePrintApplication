@@ -2,3 +2,5 @@
 node_modules
 # Idea directory
 .idea
+# Siege logs
+siege.log

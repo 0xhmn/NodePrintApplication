@@ -2,37 +2,46 @@
 var https = require('https');
 var fs = require('fs');
 var path = require('path');
-var cluster = require('cluster');
+var app = require('../app');
+var program = require('commander');
 
-if (cluster.isMaster) {
-    var numWorkers = require('os').cpus().length;                   // using all available cpus
+/**
+ * commander
+ */
+program
+  .version('0.0.1')
+  .option('-p --pass [pass]', 'PFX password')
+  .parse(process.argv);
 
-    console.log('Master cluster setting up ' + numWorkers + ' cpus');
 
-    for(var i = 0; i < numWorkers; i++) {
-        cluster.fork();
-    }
+/**
+* Create HTTPS server.
+*/
+var options = {
+  pfx: fs.readFileSync(path.resolve(__dirname, 'ultraviolet.csom.umn.edu.pfx')),
+  passphrase: program.pass
+};
 
-    cluster.on('online', function(worker) {
-        console.log('Worker ' + worker.process.pid + ' is online');
-    });
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
 
-    cluster.on('exit', function(worker, code, signal) {
-        console.log('Worker ' + worker.process.pid + ' died with code: ' + code + ', and signal: ' + signal);
-        console.log('Starting a new worker');
-        cluster.fork();
-    });
-} else {
-  /**
-  * Create HTTPS server.
-  */
-  var app = require('../app');
-  var options = {
-    pfx: fs.readFileSync(path.resolve(__dirname, 'ultraviolet.csom.umn.edu.pfx')),
-    passphrase: ''
-  };
-  var server = https.createServer(options, app);
-  server.listen(3000);
+var server = https.createServer(options, app);
+server.listen(port);
+
+
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
 }
-
-
