@@ -9,23 +9,27 @@ $ git clone [git-repo-url]
 $ npm install
 ```
 Also to run the server, you need to install pm2 on your machine:
-# Install pm2 globally
+### Install pm2 globally
+```
 $ npm install pm2 -g
+```
 
 ### running for development
+Use `$ node server\bin\www  -h` to see all of requried parameters.
+
 run the server using
 ```
-pm2 start server\bin\www -- -p pfxPassword
+pm2 start server\bin\www --  -p pfxPassword -a "Path\to\pfxFile.pfx"
 ```
 
 ### running for production
 In order to use all the resources available:
 ```
-pm2 start server\bin\www -i 0 -- -p pfxPassword
+pm2 start server\bin\www -i 0 --  -p pfxPassword -a "Path\to\pfxFile.pfx"
 ```
 or -i <number> for any other desired number of instances. e.g. `pm2 start server\bin\www -i 2 -- -p pfxPassword`
 
-##### Sending Requests
+### Sending Requests
 It is possible to send get/post to these urls:
 
 - Sending Get to Homepage:
@@ -43,3 +47,6 @@ http://localhost:3000
 
 Generated 'HTML' will be sent as a part of `Response` to `Post` Requests.
 
+### Authors
+----------
+- Hooman Yar <yar00001@umn.edu>

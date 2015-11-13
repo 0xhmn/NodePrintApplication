@@ -9,16 +9,26 @@ var program = require('commander');
  * commander
  */
 program
-  .version('0.0.1')
+  .version('1.0.0')
   .option('-p --pass [pass]', 'PFX password')
+  .option('-a --address [address]', 'Address to the file. E.g. "D:\SSL CERTS\file.pfx"')
   .parse(process.argv);
 
 
 /**
 * Create HTTPS server.
 */
+var pathToPFX;
+try {
+  pathToPFX = fs.readFileSync(program.address);
+} catch (e) {
+  console.log('Could not find the pfx file. Make sure you put the address between double quotes.');
+  console.log(e);
+}
+
 var options = {
-  pfx: fs.readFileSync(path.resolve(__dirname, 'ultraviolet.csom.umn.edu.pfx')),
+  pfx: pathToPFX,
+  // pfx: fs.readFileSync(path.resolve(__dirname, 'ultraviolet.csom.umn.edu.pfx')),
   passphrase: program.pass
 };
 

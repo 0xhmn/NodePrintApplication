@@ -25,7 +25,8 @@ router.post('/', function(req, res) {
             }, req.body.json, req.body.temp);
         },
         function sendRes(html, sendCallback) {
-            res.send({msg: "done", html: html});
+            res.set('Content-Type','text/html');
+            res.send(html);
             sendCallback();
         }
     ], function(err) {
