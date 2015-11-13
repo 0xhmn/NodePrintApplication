@@ -22,7 +22,7 @@ router.post('/', function(req, res) {
             lib.appBuilder.appBuilder(function(err, html) {
                 if (err) console.log(err);
                 makeHtmlCallback(null, html);
-            }, req.body.json, req.body.temp);
+            }, req.body);
         },
         function sendRes(html, sendCallback) {
             res.set('Content-Type','text/html');
