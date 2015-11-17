@@ -1,5 +1,5 @@
 # NodePrintApplication
-This is a Node.js-based Printing Application for 
+This is a Node.js-based Printing Application written for Carlson School of Management
 
 ### Dependencies
 First, clone the repo, then you need to install all the npm dependencies:
@@ -21,6 +21,11 @@ run the server using
 ```
 pm2 start server\bin\www --  -p pfxPassword -a "Path\to\pfxFile.pfx"
 ```
+
+### check logs for any issues
+pm2 node logs can be found by default in your use account dotfiles at `C:\Users\%%user%%\.pm2\logs`
+or by `pm2 logs` command
+
 
 ### running for production
 In order to use all the resources available:
