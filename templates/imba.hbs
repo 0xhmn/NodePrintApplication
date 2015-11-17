@@ -251,65 +251,65 @@
                         <div class="col-sm-1">
                             <p class="title">GMAT</p>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-8">
                             <p>{{gmat.scoreDate}}</p>
                             <p class="title-line">DATE</p>
                         </div>
-                        <div class="col-sm-1">
-                            <p>{{gmat.verbalScore}}</p>
+                    </div>
+
+                    <div class="col-sm-11 col-sm-offset-1">
+                        <div class="col-sm-2">
+                            <p>{{gmat.verbalScore}} / {{gmat.verbalPercentile}}%</p>
                             <p class="title-line">VERBAL</p>
                         </div>
                         <div class="col-sm-2">
-                            <p>{{gmat.quantScore}}</p>
+                            <p>{{gmat.quantScore}} / {{gmat.quantPercentile}}%</p>
                             <p class="title-line">QUANTITATIVE</p>
                         </div>
                         <div class="col-sm-2">
-                            <p>{{gmat.totalScore}}</p>
-                            <p class="title-line">TOTAL</p>
-                        </div>
-                        <div class="col-sm-2">
-                            <p>{{gmat.analyticalWritingScore}}</p>
+                            <p>{{gmat.analyticalWritingScore}} / {{gmat.analyticalWritingPercentile}}%</p>
                             <p class="title-line">AWA</p>
                         </div>
                         <div class="col-sm-2">
-                            <p>{{gmat.reasoningScore}}</p>
+                            <p>{{gmat.reasoningScore}} / {{gmat.reasoningPercentile}}%</p>
                             <p class="title-line">IR</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>{{gmat.totalScore}} / {{gmat.totalPercentile}}%</p>
+                            <p class="title-line">TOTAL</p>
                         </div>
                     </div>
                 {{/if}}
 
                 <!--GRE-->
                 {{#if gre}}
-                    <div class="col-sm-12">
+                    <div class="col-sm-12 top">
+
                         <div class="col-sm-1">
                             <p class="title">GRE</p>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-8">
                             <p>{{gre.scoreDate}}</p>
                             <p class="title-line">DATE</p>
                         </div>
-                        <div class="col-sm-1">
-                            <p>{{gre.verbalScore}}</p>
+                    </div>
+                    <div class="col-sm-11 col-sm-offset-1">
+                        <div class="col-sm-2">
+                            <p>{{gre.verbalScore}} / {{gre.verbalPercentile}}%</p>
                             <p class="title-line">VERBAL</p>
                         </div>
                         <div class="col-sm-2">
-                            <p>{{gre.quantScore}}</p>
+                            <p>{{gre.quantScore}} / {{gre.quantPercentile}}%</p>
                             <p class="title-line">QUANTITATIVE</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>{{gre.analyticalWritingScore}} / {{gre.analyticalWritingPercentile}}%</p>
+                            <p class="title-line">AWA</p>
                         </div>
                         <div class="col-sm-2">
                             <p>{{gre.totalScore}}</p>
                             <p class="title-line">TOTAL</p>
                         </div>
-                        <div class="col-sm-2">
-                            <p>{{gre.analyticalWritingScore}}</p>
-                            <p class="title-line">AWA</p>
-                        </div>
-                        {{#if gmatEquivTotal}}
-                            <div class="col-sm-2">
-                                <p>{{gmatEquivTotal}}</p>
-                                <p class="title-line">GMAT Equiv</p>
-                            </div>
-                        {{/if}}
                     </div>
                 {{/if}}
 

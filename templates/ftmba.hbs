@@ -9,7 +9,7 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <style>
-        {{{css}}}
+            {{{css}}}
     </style>
 
 </head>
@@ -84,11 +84,11 @@
                 <div class="col-sm-12 ">
                     <div class="col-sm-5">
                         <P class="title-inline">Ethnicity: Hispanic or Latino?</P>
-                            {{#if hispanic}}
-                                <p class="answer-inline">Yes</p>
-                            {{else}}
-                                <p class="answer-inline">No</p>
-                            {{/if}}
+                        {{#if hispanic}}
+                            <p class="answer-inline">Yes</p>
+                        {{else}}
+                            <p class="answer-inline">No</p>
+                        {{/if}}
                     </div>
                     <div class="col-sm-5">
                         <P class="title-inline">Gender?</P>
@@ -131,7 +131,7 @@
                     <div class="col-sm-3">
                         <P class="title-inline">Race?</P>
                         {{#each raceEthnicity}}
-                        <p class="answer-inline">{{this}}</p>
+                            <p class="answer-inline">{{this}}</p>
                         {{/each}}
                     </div>
                 </div>
@@ -251,77 +251,77 @@
                         <div class="col-sm-1">
                             <p class="title">GMAT</p>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-8">
                             <p>{{gmat.scoreDate}}</p>
                             <p class="title-line">DATE</p>
                         </div>
-                        <div class="col-sm-1">
-                            <p>{{gmat.verbalScore}}</p>
+                    </div>
+
+                    <div class="col-sm-11 col-sm-offset-1">
+                        <div class="col-sm-2">
+                            <p>{{gmat.verbalScore}} / {{gmat.verbalPercentile}}%</p>
                             <p class="title-line">VERBAL</p>
                         </div>
                         <div class="col-sm-2">
-                            <p>{{gmat.quantScore}}</p>
+                            <p>{{gmat.quantScore}} / {{gmat.quantPercentile}}%</p>
                             <p class="title-line">QUANTITATIVE</p>
                         </div>
                         <div class="col-sm-2">
-                            <p>{{gmat.totalScore}}</p>
-                            <p class="title-line">TOTAL</p>
-                        </div>
-                        <div class="col-sm-2">
-                            <p>{{gmat.analyticalWritingScore}}</p>
+                            <p>{{gmat.analyticalWritingScore}} / {{gmat.analyticalWritingPercentile}}%</p>
                             <p class="title-line">AWA</p>
                         </div>
                         <div class="col-sm-2">
-                            <p>{{gmat.reasoningScore}}</p>
+                            <p>{{gmat.reasoningScore}} / {{gmat.reasoningPercentile}}%</p>
                             <p class="title-line">IR</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>{{gmat.totalScore}} / {{gmat.totalPercentile}}%</p>
+                            <p class="title-line">TOTAL</p>
                         </div>
                     </div>
                 {{/if}}
 
                 <!--GRE-->
                 {{#if gre}}
-                    <div class="col-sm-12">
+                    <div class="col-sm-12 top">
+
                         <div class="col-sm-1">
                             <p class="title">GRE</p>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-8">
                             <p>{{gre.scoreDate}}</p>
                             <p class="title-line">DATE</p>
                         </div>
-                        <div class="col-sm-1">
-                            <p>{{gre.verbalScore}}</p>
+                    </div>
+                    <div class="col-sm-11 col-sm-offset-1">
+                        <div class="col-sm-2">
+                            <p>{{gre.verbalScore}} / {{gre.verbalPercentile}}%</p>
                             <p class="title-line">VERBAL</p>
                         </div>
                         <div class="col-sm-2">
-                            <p>{{gre.quantScore}}</p>
+                            <p>{{gre.quantScore}} / {{gre.quantPercentile}}%</p>
                             <p class="title-line">QUANTITATIVE</p>
+                        </div>
+                        <div class="col-sm-2">
+                            <p>{{gre.analyticalWritingScore}} / {{gre.analyticalWritingPercentile}}%</p>
+                            <p class="title-line">AWA</p>
                         </div>
                         <div class="col-sm-2">
                             <p>{{gre.totalScore}}</p>
                             <p class="title-line">TOTAL</p>
                         </div>
-                        <div class="col-sm-2">
-                            <p>{{gre.analyticalWritingScore}}</p>
-                            <p class="title-line">AWA</p>
-                        </div>
-                        {{#if gmatEquivTotal}}
-                            <div class="col-sm-2">
-                                <p>{{gmatEquivTotal}}</p>
-                                <p class="title-line">GMAT Equiv</p>
-                            </div>
-                        {{/if}}
                     </div>
                 {{/if}}
 
                 <!--OTHER-->
                 <!--<div class="col-sm-12 attention">-->
-                    <!--<div class="col-sm-1">-->
-                        <!--<p class="title">Other</p>-->
-                    <!--</div>-->
-                    <!--<div class="col-sm-3">-->
-                        <!--<p>1010</p>-->
-                        <!--<p class="title-line"></p>-->
-                    <!--</div>-->
+                <!--<div class="col-sm-1">-->
+                <!--<p class="title">Other</p>-->
+                <!--</div>-->
+                <!--<div class="col-sm-3">-->
+                <!--<p>1010</p>-->
+                <!--<p class="title-line"></p>-->
+                <!--</div>-->
                 <!--</div>-->
 
 
@@ -516,123 +516,123 @@
 
     <!-- EMPLOYMENT -->
     {{#user.employment}}
-        <article class="row">
-            <header class="col-sm-2">
-                <h3>Employment</h3>
-            </header>
-                <div class="col-sm-10 ">
-                    <div class="col-sm-12 ">
-                        {{#if recentEmployment.isCurrent}}
-                            <div class="col-sm-2">
-                                <p>X</p>
-                                <p class="title-line">Current Position</p>
-                            </div>
-                        {{else}}
-                            <div class="col-sm-2">
-                                <p>X</p>
-                                <p class="title-line">Last Position</p>
-                            </div>
-                        {{/if}}
-                        <div class="col-sm-3">
-                            <p>&nbsp;{{workExperience.fullTimeYears}}</p>
-                            <p class="title-line">Year of Full-Time Experience</p>
-                        </div>
-                    </div>
-                    {{#if recentEmployment}}
-                        <div class="col-sm-12 ">
-                            <div class="col-sm-6">
-                                <p>&nbsp;{{recentEmployment.employer.name}}</p>
-                                <p class="title-line">COMPANY</p>
-                            </div>
-                            <div class="col-sm-3">
-                                <p>&nbsp;{{recentEmployment.startDate}}</p>
-                                <p class="title-line">FROM (MONTH/YEAR)</p>
-                            </div>
-                            <div class="col-sm-3">
-                                <p>&nbsp;{{recentEmployment.endDate}}</p>
-                                <p class="title-line">TO (MONTH/YEAR)</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 ">
-                            <div class="col-sm-6">
-                                <p>&nbsp;{{recentEmployment.jobTitle}}</p>
-                                <p class="title-line">JOB TITLE</p>
-                            </div>
-                            <div class="col-sm-3">
-                                <p>&nbsp;{{recentEmployment.yearsInPosition}}</p>
-                                <p class="title-line">YEARS IN THIS POSITION</p>
-                            </div>
-                            <div class="col-sm-3">
-                                <p>&nbsp;{{recentEmployment.hoursPerWeek}}</p>
-                                <p class="title-line">HOURS PER WEEK</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 ">
-                            <div class="col-sm-6">
-                                <P class="title-inline">Was this position full-time?</P>
-                                {{#if recentEmployment.isFullTime}}
-                                    <p class="answer-inline">Yes</p>
-                                {{else}}
-                                    <p class="answer-inline">No</p>
-                                {{/if}}
-                            </div>
-                            <div class="col-sm-6">
-                                <P class="title-inline">Annual ending salary in U.S. $</P>
-                                <p class="answer-inline">{{recentEmployment.salary}}</p>
-                            </div>
-                        </div>
+    <article class="row">
+        <header class="col-sm-2">
+            <h3>Employment</h3>
+        </header>
+    <div class="col-sm-10 ">
+        <div class="col-sm-12 ">
+            {{#if recentEmployment.isCurrent}}
+                <div class="col-sm-2">
+                    <p>X</p>
+                    <p class="title-line">Current Position</p>
+                </div>
+            {{else}}
+                <div class="col-sm-2">
+                    <p>X</p>
+                    <p class="title-line">Last Position</p>
+                </div>
+            {{/if}}
+            <div class="col-sm-3">
+                <p>&nbsp;{{workExperience.fullTimeYears}}</p>
+                <p class="title-line">Year of Full-Time Experience</p>
+            </div>
+        </div>
+        {{#if recentEmployment}}
+            <div class="col-sm-12 ">
+                <div class="col-sm-6">
+                    <p>&nbsp;{{recentEmployment.employer.name}}</p>
+                    <p class="title-line">COMPANY</p>
+                </div>
+                <div class="col-sm-3">
+                    <p>&nbsp;{{recentEmployment.startDate}}</p>
+                    <p class="title-line">FROM (MONTH/YEAR)</p>
+                </div>
+                <div class="col-sm-3">
+                    <p>&nbsp;{{recentEmployment.endDate}}</p>
+                    <p class="title-line">TO (MONTH/YEAR)</p>
+                </div>
+            </div>
+            <div class="col-sm-12 ">
+                <div class="col-sm-6">
+                    <p>&nbsp;{{recentEmployment.jobTitle}}</p>
+                    <p class="title-line">JOB TITLE</p>
+                </div>
+                <div class="col-sm-3">
+                    <p>&nbsp;{{recentEmployment.yearsInPosition}}</p>
+                    <p class="title-line">YEARS IN THIS POSITION</p>
+                </div>
+                <div class="col-sm-3">
+                    <p>&nbsp;{{recentEmployment.hoursPerWeek}}</p>
+                    <p class="title-line">HOURS PER WEEK</p>
+                </div>
+            </div>
+            <div class="col-sm-12 ">
+                <div class="col-sm-6">
+                    <P class="title-inline">Was this position full-time?</P>
+                    {{#if recentEmployment.isFullTime}}
+                        <p class="answer-inline">Yes</p>
+                    {{else}}
+                        <p class="answer-inline">No</p>
                     {{/if}}
+                </div>
+                <div class="col-sm-6">
+                    <P class="title-inline">Annual ending salary in U.S. $</P>
+                    <p class="answer-inline">{{recentEmployment.salary}}</p>
+                </div>
+            </div>
+        {{/if}}
     {{/user.employment}}
 
-                    {{#user.recentEmploymentDetail}}
-                        <div class="col-sm-12">
-                            <h5>Company Info:</h5>
-                        </div>
-                        <div class="col-sm-12 ">
-                            {{#if recentEmploymentDetail.industryName}}
-                                <div class="col-sm-6">
-                                    <p>{{recentEmploymentDetail.industryName}}</p>
-                                    <p class="title-line">INDUSTRY</p>
-                                </div>
-                            {{/if}}
-                            {{#if recentEmploymentDetail.jobFucntion}}
-                                <div class="col-sm-6">
-                                    <p>{{recentEmploymentDetail.jobFucntion}}</p>
-                                    <p class="title-line">JOB FUNCTION</p>
-                                </div>
-                            {{/if}}
-                        </div>
-                        <div class="col-sm-12 ">
-                            {{#if recentEmploymentDetail.companySize}}
-                                <div class="col-sm-4">
-                                    <p>{{recentEmploymentDetail.companySize}}</p>
-                                    <p class="title-line">COMPANY SIZE</p>
-                                </div>
-                            {{/if}}
-                            {{#if recentEmploymentDetail.annualSale}}
-                                <div class="col-sm-4">
-                                    <p>{{recentEmploymentDetail.annualSale}}</p>
-                                    <p class="title-line">ANNUAL SALES</p>
-                                </div>
-                            {{/if}}
-                            {{#if recentEmploymentDetail.ownership}}
-                                <div class="col-sm-4">
-                                    <p>{{recentEmploymentDetail.ownership}}</p>
-                                    <p class="title-line">OWNERSHIP TYPE</p>
-                                </div>
-                            {{/if}}
-                        </div>
-                        {{#if recentEmploymentDetail.natureOfActivity}}
-                            <div class="col-sm-12 ">
-                                <div class="col-sm-12">
-                                    <p>{{recentEmploymentDetail.natureOfActivity}}</p>
-                                    <p class="title-line">NATURE OF EMPLOYER'S ACTIVITIES</p>
-                                </div>
-                            </div>
-                        {{/if}}
-                    {{/user.recentEmploymentDetail}}
+    {{#user.recentEmploymentDetail}}
+        <div class="col-sm-12">
+            <h5>Company Info:</h5>
+        </div>
+        <div class="col-sm-12 ">
+            {{#if recentEmploymentDetail.industryName}}
+                <div class="col-sm-6">
+                    <p>{{recentEmploymentDetail.industryName}}</p>
+                    <p class="title-line">INDUSTRY</p>
+                </div>
+            {{/if}}
+            {{#if recentEmploymentDetail.jobFucntion}}
+                <div class="col-sm-6">
+                    <p>{{recentEmploymentDetail.jobFucntion}}</p>
+                    <p class="title-line">JOB FUNCTION</p>
+                </div>
+            {{/if}}
+        </div>
+        <div class="col-sm-12 ">
+            {{#if recentEmploymentDetail.companySize}}
+                <div class="col-sm-4">
+                    <p>{{recentEmploymentDetail.companySize}}</p>
+                    <p class="title-line">COMPANY SIZE</p>
+                </div>
+            {{/if}}
+            {{#if recentEmploymentDetail.annualSale}}
+                <div class="col-sm-4">
+                    <p>{{recentEmploymentDetail.annualSale}}</p>
+                    <p class="title-line">ANNUAL SALES</p>
+                </div>
+            {{/if}}
+            {{#if recentEmploymentDetail.ownership}}
+                <div class="col-sm-4">
+                    <p>{{recentEmploymentDetail.ownership}}</p>
+                    <p class="title-line">OWNERSHIP TYPE</p>
+                </div>
+            {{/if}}
+        </div>
+        {{#if recentEmploymentDetail.natureOfActivity}}
+            <div class="col-sm-12 ">
+                <div class="col-sm-12">
+                    <p>{{recentEmploymentDetail.natureOfActivity}}</p>
+                    <p class="title-line">NATURE OF EMPLOYER'S ACTIVITIES</p>
+                </div>
             </div>
-        </article>
+        {{/if}}
+    {{/user.recentEmploymentDetail}}
+</div>
+</article>
 
     <!-- Dual Degree -->
     {{#user.academic.dualDegree}}
@@ -654,9 +654,9 @@
                 <div class="col-sm-12 ">
                     <div class="col-sm-10">
                         <P class="title-inline">If yes, which program?</P>
-                            {{#if isDualDegree}}
-                                    <p class="answer-inline">{{degreeProgram}}</p>
-                            {{/if}}
+                        {{#if isDualDegree}}
+                            <p class="answer-inline">{{degreeProgram}}</p>
+                        {{/if}}
                     </div>
                 </div>
                 <div class="col-sm-12 ">
@@ -797,10 +797,10 @@
             <div class="col-sm-10 ">
                 <div class="col-sm-12 ">
                     {{#if stateLegalRes}}
-                    <div class="col-sm-6">
-                        <P>{{stateLegalRes}}</P>
-                        <p class="title-line">STATE OF LEGAL RESIDENCE</p>
-                    </div>
+                        <div class="col-sm-6">
+                            <P>{{stateLegalRes}}</P>
+                            <p class="title-line">STATE OF LEGAL RESIDENCE</p>
+                        </div>
                     {{/if}}
                     {{#if permResCountry}}
                         <div class="col-sm-6">
@@ -836,17 +836,17 @@
                             </div>
                         </div>
                     {{/if}}
-                {{#if nonUSCitizenVisa.visaInstitution}}
-                    <div class="col-sm-12 ">
-                        <div class="col-sm-3">
-                            <p class="title">F-1 School</p>
+                    {{#if nonUSCitizenVisa.visaInstitution}}
+                        <div class="col-sm-12 ">
+                            <div class="col-sm-3">
+                                <p class="title">F-1 School</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p>{{nonUSCitizenVisa.visaInstitution}}</p>
+                                <p class="title-line"></p>
+                            </div>
                         </div>
-                        <div class="col-sm-9">
-                            <p>{{nonUSCitizenVisa.visaInstitution}}</p>
-                            <p class="title-line"></p>
-                        </div>
-                    </div>
-                {{/if}}
+                    {{/if}}
                     <div class="col-sm-12 bottom">
                         <div class="col-sm-3">
                             <p class="title">Attended that institution?</p>
@@ -993,21 +993,21 @@
 
     <!-- Other Information -->
 
-        <article class="row">
-            <header class="col-sm-2">
-                <h3>Other Information</h3>
-            </header>
-            <div class="col-sm-10">
-                <div class="col-sm-12 ">
-                    <p class="paragraph">
-                        The {{user.program.name}} Program may request University staff, faculty, alumni, and/or current students to assist you with questions
-                        concerning the University and provide you with additional information. This would be done under the direction of the
-                        MBA admissions staff. The type of information that would be released includes name, address, phone number, email address,
-                        intended field of study, undergraduate institution, and most recent employer. If you prefer NOT to receive this particular
-                        service, please select NO here.
-                    </p>
-                </div>
-                {{#user.additionalInfo.additionalInfo}}
+    <article class="row">
+        <header class="col-sm-2">
+            <h3>Other Information</h3>
+        </header>
+        <div class="col-sm-10">
+            <div class="col-sm-12 ">
+                <p class="paragraph">
+                    The {{user.program.name}} Program may request University staff, faculty, alumni, and/or current students to assist you with questions
+                    concerning the University and provide you with additional information. This would be done under the direction of the
+                    MBA admissions staff. The type of information that would be released includes name, address, phone number, email address,
+                    intended field of study, undergraduate institution, and most recent employer. If you prefer NOT to receive this particular
+                    service, please select NO here.
+                </p>
+            </div>
+            {{#user.additionalInfo.additionalInfo}}
                 <div class="col-sm-12 ">
                     <div class="col-sm-3">
                         {{#if releaseInfo}}
@@ -1036,27 +1036,27 @@
                         <P class="title-line"></P>
                     </div>
                 </div>
-                {{/user.additionalInfo.additionalInfo}}
+            {{/user.additionalInfo.additionalInfo}}
 
-                {{#user.advertisements}}
+            {{#user.advertisements}}
                 <div class="col-sm-12 top">
                     {{#if availableAdvertisements.length}}
                         <div class="col-sm-4">
                             <p class="title">How did you hear about us?</p>
                         </div>
-                            <div class="col-sm-6">
-                                {{#each availableAdvertisements}}
-                                    <div class="col-sm-12">
-                                        <p>{{name}}</p>
-                                        <P class="title-line"></P>
-                                    </div>
-                                {{/each}}
-                            </div>
+                        <div class="col-sm-6">
+                            {{#each availableAdvertisements}}
+                                <div class="col-sm-12">
+                                    <p>{{name}}</p>
+                                    <P class="title-line"></P>
+                                </div>
+                            {{/each}}
+                        </div>
                     {{/if}}
                 </div>
-                {{/user.advertisements}}
-            </div>
-        </article>
+            {{/user.advertisements}}
+        </div>
+    </article>
 
 
     <!-- Footer -->
