@@ -6,3 +6,6 @@ node_modules
 siege.log
 # ssh folder
 server/bin/*.pfx
+# setup batch files
+*.bat
+NodeBatch
