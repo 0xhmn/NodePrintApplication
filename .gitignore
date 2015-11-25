@@ -8,4 +8,4 @@ siege.log
 server/bin/*.pfx
 # setup batch files
 *.bat
-NodeBatch
+NodeOnBoot
