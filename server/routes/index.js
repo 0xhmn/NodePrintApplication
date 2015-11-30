@@ -8,7 +8,6 @@ router.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
-
 /* POST / */
 router.post('/', function(req, res) {
     // only accepts 'application/json'
@@ -16,6 +15,9 @@ router.post('/', function(req, res) {
         console.log('you need to send application/json');
         res.sendStatus(415);
     }
+
+    var t = req.body;
+    console.log(t);
 
     async.waterfall([
         function makeHtml(makeHtmlCallback) {
@@ -27,7 +29,10 @@ router.post('/', function(req, res) {
         function sendRes(html, sendCallback) {
             res.set('Content-Type','text/html');
             res.send(html);
-            sendCallback();
+            sendCallback(null, 'done');
+        }, function logReq(result, logCallback) {
+            lib.logger.logRequests(req.body);
+            logCallback();
         }
     ], function(err) {
         if (err) {
