@@ -3,7 +3,8 @@ This is a Node.js-based Printing Application written for Carlson School of Manag
 
 ### Easy Setup
 Just run `NodeOnBoot.exe` and follow the steps. Node server will run in background even after rebooting the system, so you don't need to set it up again.
-![NodeOnBoot](http://i.imgur.com/YVh8SSD.png)
+
+![NodeOnBoot](https://github.com/hmny/NodeOnBoot/raw/RegEdit/nodeonboot.png)
 
 ### Dependencies
 First, clone the repo, then you need to install all the npm dependencies:
